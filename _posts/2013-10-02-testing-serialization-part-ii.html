@@ -1,0 +1,187 @@
+---
+layout: post
+title: Testing serialization part II
+date: 2013-10-02 22:10:03.000000000 +01:00
+categories:
+- Continuous Integration
+- TDD
+tags:
+- ".Net"
+- Serialization
+- TDD
+- Testing
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+  publicize_linkedin_url: http://www.linkedin.com/updates?discuss=&scope=20952117&stype=M&topic=5791292832828379136&type=U&a=30xP
+  publicize_twitter_user: garfieldmoore
+  publicize_twitter_url: http://t.co/e1evsUJ6sm
+  _wpas_done_4780980: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:20430620;b:1;}}
+  _wpas_done_4781430: '1'
+  publicize_reach: a:2:{s:7:"twitter";a:1:{i:4780980;i:1;}s:2:"wp";a:1:{i:0;i:0;}}
+  _wpas_skip_4780980: '1'
+  _wpas_skip_4781430: '1'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>My previous post on <a title="testing serialization" href="http://garfieldmoore.co.uk/2013/04/19/serialising-objects/">testing serialization</a> was in-complete.  Since then my tests have evolved enough to warrant another post (at least I think so).</p>
+<p>Here's the excerpt from my previous post;</p>
+<pre style="padding-left:30px;"><code>[Test]
+public void Should_Serialise_across_service_boundary()
+{
+    var s = new DataContractSerializer(typeof(BankAccount));
+    var account = new BankAccount() { Owner = new Person() };
+    s.WriteObject(new MemoryStream(), account);
+}
+</code></pre>
+<p>So, what are the shortcomings I'd like to address?</p>
+<ul>
+<li>The test doesn't assert anything. As long as the serializer doesn't throw an exception, the test passes</li>
+<li>It isn't particuarly readable and we'll probably end up with a lot of code duplication</li>
+</ul>
+<p>However, before addressing the above issues I'd like to explain why we became interested in testing serialisation and how we failed to solve this previously.</p>
+<h2>Motivation</h2>
+<p>Unlike my normal tests this is not a TDD practise.  TDD is about driving your design through tests.  This is not my motivation for doing this type of test.</p>
+<p><em>These tests are supporting continuous integration by providing early feedback.<br />
+</em><br />
+On the project I was designing at the time we'd spent some time tracking down the cause of defects that turned out to be serialization issues.</p>
+<h2>First attempt</h2>
+<p>To address this we starting creating a comprehensive set of integration and acceptance tests. However, these took too long to run and we realised things would only get worse as our system grew.</p>
+<p>Also, detecting these problems in integration tests increases the feedback loop. This is bad. It would be much better to find these problems sooner - preferably in unit tests.</p>
+<h2>Unit testing serialization</h2>
+<p>So let's get back to the tests.</p>
+<p>Take the following classes;</p>
+<pre style="padding-left:30px;"><code>public class BankAccount
+{
+    public string AccountNumber { get; set; }
+    public string SortCode { get; set; }
+    public Person Owner { get; set;}
+
+public class Person
+{
+    public string Name { get; set; }
+    public DateTime DateOfBirth { get; set; }
+}
+</code></pre>
+<p>BankAccount and Person are simple classes, so I'm confident this will serialize correctly.</p>
+<p>Now, how about after refactoring this to use interfaces;</p>
+<pre style="padding-left:30px;"><code>public class BankAccount
+{
+    public string AccountNumber { get; set; }
+    public string SortCode { get; set; }
+    public IParty Owner { get; set; }
+}
+
+public class Person : IParty
+{
+    public string Name { get; set; }
+    public DateTime DateOfBirth { get; protected set; }
+}
+
+public interface IParty
+{
+    string Name { get; set; }
+}
+</code></pre>
+<p>This will now fail as the serializer has no knowledge of the interface and the Person's DateOfBirth property has a protected setter.</p>
+<p>So here's my test;</p>
+<pre style="padding-left:30px;"><code>[Test]
+ public void Should_Serialise_across_service_boundary()
+ {
+     GivenBankAccount();
+     GivenAccountHasBeenSerialised();
+     WhenDeserializingFromStream();
+
+     ThenAllPropertiesShouldBeSet();
+  }
+</code></pre>
+<p>I like to refactor my test code into methods to reduce noise and increase the intent on the code.  this makes it easier to understand them later. The Givens sets up the scenario I am testing;</p>
+<pre style="padding-left:30px;"><code>private void GivenBankAccount()
+{
+    account = Builder&lt;BancAccount&gt;.CreateNew().Build();
+    person = Builder&lt;Person&gt;.CreateNew().Build();
+    account.Owner = person;
+}
+</code></pre>
+<pre style="padding-left:30px;"><code>private void GivenAccountHasBeenSerialised()
+{
+    storeStream = new MemoryStream();
+    serializer = new DataContractSerializer(typeof(BankAccount));
+    serializer.WriteObject(storeStream, account);
+}
+</code></pre>
+<p>The When..() method deserializes the stream back into a BankAccount instance;</p>
+<pre style="padding-left:30px;"><code>private void WhenDeserializingFromStream()
+{
+    storeStream.Position = 0;
+    savedAccountDetails = this.serializer.ReadObject(storeStream) as BankAccount;
+}
+</code></pre>
+<p>And finally, we test the deserialized object's properties are the same as the original;</p>
+<pre style="padding-left:30px;"><code>private void ThenAllPropertiesShouldBeSet()
+{
+    savedAccountDetails.ShouldNotBe(null); 
+    savedAccountDetails.SortCode.ShouldBe(account.SortCode); 
+    savedAccountDetails.AccountNumber.ShouldBe(account.AccountNumber); 
+    savedAccountDetails.Owner.Name.ShouldBe(person.Name
+    ((Person)savedAccountDetails.Owner).DateOfBirth.ShouldBe(person.DateOfBirth);</code></pre>
+<p>}</p>
+<p>This test will pick up both problems; the DateOfBirth property won't be set correctly and the serializer will prompt to add the <code>[KnownType(typeof(Person))]</code> attribute to the BankAccount class;</p>
+<p>To aid re-use and reduce code clutter I've created some extension methods to serialize and de-serialize objects;</p>
+<pre style="padding-left:30px;"><code>public static class SerialisationExtensions
+{
+    public static Stream Serialize(this T target)
+    {
+        Stream storeStream = new MemoryStream();
+        var serializer = new DataContractSerializer(typeof(T));
+        serializer.WriteObject(storeStream, target);
+        return storeStream;
+    }
+
+    public static T DeSerialize&lt;T&gt;(this Stream fromStream) where T: class
+    {
+        fromStream.Position = 0;
+        var serializer = new DataContractSerializer(typeof(T));
+        return serializer.ReadObject(fromStream) as T;
+    }
+}
+</code></pre>
+<p>This reduces code duplication in my tests. The below methods;</p>
+<pre style="padding-left:30px;"><code>private void GivenAccountHasBeenSerialised()
+{
+    storeStream = new MemoryStream();
+    serializer = new DataContractSerializer(typeof(BankAccount));
+    serializer.WriteObject(storeStream, account);
+} 
+
+private void WhenDeserializingFromStream()
+{
+    storeStream.Position = 0;
+    savedAccountDetails = this.serializer.ReadObject(storeStream) as BankAccount;
+}
+</code></pre>
+<p>are replaced with these;</p>
+<pre style="padding-left:30px;"><code>private void GivenAccountHasBeenSerialised()
+{
+   storeStream = account.Serialize();
+}
+
+private void WhenDeserializingFromStream()
+{
+    savedAccountDetails = storeStream.DeSerialize&lt;BancAccount&gt;();
+}
+</code></pre>
+<p>This makes these methods redundant and we could move this code back into the test.</p>
+<h2>What we learnt</h2>
+<p>Creating a comprehensive suite of integration and acceptance tests did prevent our team deploying broken software. However, these were slow running tests and slowed us down.</p>
+<p>Finding a way of moving these tests from integration to unit tests enabled us to be faster by reducing our feedback loop.</p>
+<p>I've still got some more work to do on testing serialization but this method is easier to understand and more reliable than testing that attributes exist on your classes.</p>

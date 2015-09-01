@@ -1,0 +1,73 @@
+---
+layout: post
+title: Reading Xml files
+date: 2013-09-30 11:08:18.000000000 +01:00
+categories:
+- ".Net"
+tags:
+- ".Net"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+  publicize_twitter_user: garfieldmoore
+  publicize_twitter_url: http://t.co/qoITuF8BOq
+  _wpas_done_4780980: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:20430620;b:1;}}
+  publicize_linkedin_url: http://www.linkedin.com/updates?discuss=&scope=20952117&stype=M&topic=5790891063791079424&type=U&a=4RLL
+  _wpas_done_4781430: '1'
+  _wpas_skip_4780980: '1'
+  _wpas_skip_4781430: '1'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>On a recent project we needed to read data from a file. We couldn't simply de-serialize using the built in .net serialization as the file format had already been defined and we didn't have the time to write custom serialization. So our problem was that given an xml file format such as the one below, how best to consume it? <code></code></p>
+<pre style="padding-left:30px;">&lt;Products&gt;
+&lt;Product name="Name1" manufacturer="Manufacturer1"/&gt;
+&lt;Product  name="Name2" manufacturer=""Manufacturer2"/&gt;
+&lt;/Products&gt;</pre>
+<p>This had been solved in a few places by using an xml parser. I didn't like this as it seemed fragile. </p>
+<p><strong style="color:#2b6fb6;font-size:1.5em;">Auto generate classes</strong> </p>
+<p>After some thought I realised we could create the classes from the xml using the xml schema definition tool. First create an xml schema from the visual studio command prompt using xsd.exe;</p>
+<pre style="padding-left:30px;">xsd.exe products.xml</pre>
+<p>Then we create the classes from the schema;</p>
+<pre style="padding-left:30px;">xsd.exe /classes products.xsd</pre>
+<p><strong style="color:#2b6fb6;font-size:1.5em;">Deserialize files into objects</strong> </p>
+<p>We now have the classes required to de-serialize the file into .net objects.  The below code and utility class can now handle the de-serialization;</p>
+<pre style="padding-left:30px;">[Test]
+public void Should_load_products()
+{
+     var p = new XmlEntityReader&lt;Products&gt;();
+     var productList = p.Read("blog\productdata.xml");
+
+     productList.Items.Length.ShouldBe(2);
+}
+
+public class XmlEntityReader&lt;T&gt; where T : class
+{
+    public T Read(string storeFullPath)
+    {
+       return Read(new FileStream(storeFullPath, FileMode.Open));
+    }
+
+    public T Read(Stream storeStream)
+    {  
+        storeStream.Position = 0;
+        T settings;
+        var serializer = new XmlSerializer(typeof(T));
+        using (TextReader tr = new StreamReader(storeStream))
+        {
+           settings = serializer.Deserialize(tr) as T;
+           tr.Close();
+        }
+        return settings;
+    }
+}</pre>
+<p> </p>

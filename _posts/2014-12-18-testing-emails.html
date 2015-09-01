@@ -1,0 +1,55 @@
+---
+layout: post
+title: Testing emails
+date: 2014-12-18 10:16:41.000000000 +00:00
+categories:
+- ".Net"
+tags:
+- TDD
+status: publish
+type: post
+published: true
+meta:
+  geo_public: '0'
+  _edit_last: '20508111'
+  _publicize_pending: '1'
+  publicize_google_plus_url: https://plus.google.com/104210547641993449129/posts/64DbrjqqM9r
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _wpas_skip_facebook: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _wpas_done_4964787: '1'
+  _publicize_done_external: a:1:{s:11:"google_plus";a:1:{s:21:"104210547641993449129";b:1;}}
+  publicize_twitter_user: garfieldmoore
+  publicize_twitter_url: http://t.co/kaeehKT7eP
+  _wpas_done_4780980: '1'
+  publicize_linkedin_url: ''
+  _wpas_done_4781430: '1'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>We've recently added email notifications to our application.  I really wanted to avoid configuring email servers or setting up email accounts to test our software. Luckily there are a number of tools to help with this for development, and testing.</p>
+<h2><strong>Development</strong></h2>
+<p>We're using .Net so we can configure our application to send all SMTP to a file directory. This can be done in the application configuration file with the below snippet;</p>
+<pre>&lt;system.net&gt;
+    &lt;mailSettings&gt;
+        &lt;smtp deliveryMethod="SpecifiedPickupDirectory"&gt;
+            &lt;specifiedPickupDirectory pickupDirectoryLocation="c:\temp\mailbox\"/&gt;
+        &lt;/smtp&gt;
+   &lt;/mailSettings&gt;
+&lt;/system.net&gt;
+</pre>
+<p>Our acceptance tests relied on this mechanism to redirect SMTP traffic to the file system. We then had an interface in our automation framework to parse these files so we could easily check the contents.</p>
+<h2><strong>Component Testing</strong></h2>
+<p>For manual testing we wanted to avoid having to change the application configuration so looked for a simple way of setting up SMTP.</p>
+<p>We decided to use an SMTP fake. There are a few open source project for this.  Two examples are <a href="https://smtp4dev.codeplex.com/">SMTP4Dev</a> and <a href="http://papercut.codeplex.com/">PaperCut</a>.</p>
+<p>I use SMTP4Dev simply because I've used it before but will try papercut when I get some time.</p>
+<h2><strong>System Testing</strong></h2>
+<p>This is the only time we needed to have a real SMTP server configured.  For this we have a Dogfood environment that our operations department takes care of. Taking this approach completely removed the need to become experts in configuring email servers to test sending emails.</p>

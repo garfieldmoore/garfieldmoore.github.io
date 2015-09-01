@@ -1,0 +1,48 @@
+---
+layout: post
+title: Simple workflows
+date: 2012-09-10 20:42:28.000000000 +01:00
+categories:
+- Objectflow
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>It's simple to define workflows declaratively;</p>
+<pre style="padding-left:30px;">var customerWorkflow = Workflow&lt;CustomerState&gt;.Definition()
+    .Configure()
+    .On&lt;Exception&gt;(() =&gt; Console.WriteLine("Caught an exception"))
+    .When&lt;CustomerState&gt;()
+    .Do&lt;PlaceOrder&gt;()
+    .Do&lt;PayForCoffee&gt;()
+    .Do&lt;PickUp&gt;();</pre>
+<p>The above workflow defines the ubiquitous Starbucks example.  The customer states are defined by the below class;</p>
+<pre style="padding-left:30px;">public class CustomerState 
+{     
+public bool OrderPlaced { get; set; }     
+public bool Paid { get; set; }     
+public bool DrinkReceived { get; set; }
+}</pre>
+<p>Now the workflow steps can be defined as Operations on CustomerState;</p>
+<pre style="padding-left:30px;">public class PlaceOrder : BasicOperation&lt;CustomerState&gt;
+{
+    public override CustomerState Execute(CustomerState data)
+    {
+        Console.WriteLine("Place order;");
+        data.OrderPlaced = true;
+        return data;
+    }
+}</pre>
+<p>When starting the workflow the parameterised start method should be used;</p>
+<pre>var endState = customerWorkflow.Start(new CustomerState());</pre>

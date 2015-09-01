@@ -1,0 +1,36 @@
+---
+layout: post
+title: less typing on git command line
+date: 2012-08-22 20:52:16.000000000 +01:00
+categories:
+- Git
+tags:
+- Git
+- Tools
+- VCS
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>If you're tired of typing git commands you can set aliases for your favourites.</p>
+<p>enter the following command while on the git command line;</p>
+<p>git config --global alias.down pull</p>
+<p>You can now type 'git down' instead of 'git pull' as this command creates an alias for pull called 'down'.</p>
+<p>Here's a few other examples of mine;</p>
+<p><strong>git st =&gt; git status</strong></p>
+<p>git config --global alias.st status</p>
+<p><strong>git co =&gt; git commit</strong></p>
+<p><strong>git commit =&gt; git co</strong></p>
+<p>git config --global alias.co commit %1</p>
+<p><strong>git push =&gt; git up</strong></p>
+<p>git config --global alias.up push origin master</p>

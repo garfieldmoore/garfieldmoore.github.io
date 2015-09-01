@@ -1,0 +1,32 @@
+---
+layout: post
+title: Tests
+date: 2012-04-30 21:44:34.000000000 +01:00
+categories:
+- Testing
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '20508111'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<div>Tests should exhibit symetric change attributes;  A small code change results in a small change to our tests.  Likewise, a small change to the tests should require a small code change.</div>
+<div>By contrast, if we see asymemetric changes it means our tests are brittle and we'll spend more and more time refactoring tests.</div>
+<div>One reason for brittle tests is a failure to recognise different levels of testing;</div>
+<div>Business</div>
+<div>Workflow</div>
+<div>Technical Activity</div>
+<div>A change in the workflow should not break a business test.  Decoupling tests in this way makes them more amenable to change.</div>
+<div>It is usually quite easy to see what level a test is because the clarity of a tests decreases as it moves down the list.</div>
+<div>A business test is an acceptance test that documents a feature.  These are written in the domain language and created in collaboration with the customer.  These tests change infrequently and are easily understood.</div>
+<div>Workflow tests change more frequently and although often understood by the customer are more technical and often at the component level.  These change less often.</div>
+<div>Technical activity tests have the least clarity and rarely understood without technical knowledge.  These also change the most frequently.test</div>

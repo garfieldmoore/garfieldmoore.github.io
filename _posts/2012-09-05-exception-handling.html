@@ -1,0 +1,31 @@
+---
+layout: post
+title: Exception handling
+date: 2012-09-05 20:09:12.000000000 +01:00
+categories:
+- Objectflow
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>I've added exception handling into the latest release (1.4.x).  This allows you to specify exception handling policies as below;</p>
+<pre>var workflow = new Workflow&lt;string&gt;();
+
+workflow.Configure()
+	.On&lt;Exception&gt;(MyExceptionHandler)
+	.On&lt;NotImplementedException&gt;(MyNotIMplementedHandler)
+	.When().Do(...)</pre>
+<p>The When&lt;T&gt;() method closes the definition of exception handlers and you can then define the workflow as usual.  The T in the when clause should match the type of workflow defined.  In this case, string.</p>
+<p>My original attempt at handling errors by catching them and setting the operation's success status to false was a bit of a mistake.  I allowed this behaviour to be over-ridden as I could see problems.</p>
+<p>I've decided to break the backward compatibility as this previous exception handling mechanism was implemented under time pressure (work and family related) and this is how I envisioned it working initially.</p>

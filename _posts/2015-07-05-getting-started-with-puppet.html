@@ -1,0 +1,63 @@
+---
+layout: post
+title: Getting started with puppet
+date: 2015-07-05 13:26:02.000000000 +01:00
+categories:
+- Infrastructure
+tags:
+- devops
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+  _publicize_done_external: a:2:{s:7:"twitter";a:1:{i:4780980;s:59:"https://twitter.com/garfieldmoore/status/617685882200403968";}s:8:"facebook";a:1:{i:11337921;s:38:"https://facebook.com/10205380374042191";}}
+  _publicize_job_id: '12382328597'
+  _publicize_done_4856175: '1'
+  _wpas_done_4780980: '1'
+  publicize_twitter_user: garfieldmoore
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=20952117&stype=M&topic=6023451575974977536&type=U&a=hNym
+  _publicize_done_4856593: '1'
+  _wpas_done_4781430: '1'
+  publicize_google_plus_url: https://plus.google.com/104210547641993449129/posts/HdKj6Py4Noy
+  _publicize_done_5027555: '1'
+  _wpas_done_4964787: '1'
+  _publicize_done_11273773: '1'
+  _wpas_done_11337921: '1'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>I've recently started using <a href="https://puppetlabs.com/">Puppet</a>.&nbsp; One of the things I first struggled with was creating a <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">hello world application</a>.</p>
+<p>If you look at the <a href="http://docs.puppetlabs.com/pe/latest/quick_start.html">getting started documentation</a> you are pointed to a <a href="http://docs.puppetlabs.com/pe/latest/quick_start_helloworld.html">Puppet hello world</a>.&nbsp; This&nbsp; was promising but turned out to be more complicated than I had hoped as it was configuring a client and a server.</p>
+<h2>Puppet Standalone</h2>
+<p>The installation guide mentioned <a href="http://docs.puppetlabs.com/guides/install_puppet/pre_install.html#standalone-puppet">Puppet Standalone</a>. This sounded like what I wanted but I couldn’t find any other information about installing in this mode.</p>
+<p>This isn’t surprising as the documentation is aimed at enterprise use and this wouldn’t be valuable in that context.</p>
+<h2>Install Standalone puppet</h2>
+<p>After some trial and error I realised that to install standalone puppet you simply download the puppet agent MSI.</p>
+<p>Once installed, we just need to write a script to do something.&nbsp; The simplest thing I could think of is to create a folder and write a file into the new folder.</p>
+<h2>Hello World Script</h2>
+<p><span style="font-family:cou;">Puppet declares the steps to set up a machine in <a href="https://docs.puppetlabs.com/puppet/latest/reference/lang_classes.html">puppet classes</a>.&nbsp; Once I found an example the file type on <a href="http://www.puppetcookbook.com/posts/creating-a-directory.html">Puppet Cookbooks</a> it was pretty simple to create this script;</span></p>
+<blockquote><pre /><p>class MyFirstScript{</p><p>    file{'c:\HelloWorld\hellowWorld.txt':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p>        ensure =&gt;file,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p>        content =&gt; 'Hello world!',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p>    }</p><p>
+</p><p>    file{"c:\HelloWorld":<br />        ensure =&gt;"directory",</p><p>    }</p><p>}</p><p>include MyFirstScript</p></blockquote>
+<blockquote>
+<p>Save this as MyFirstScript.pp.&nbsp; pp is the extension used for puppet scripts.</p>
+<p>The script creates a file called hellowWorld.txt in the c:\HelloWorld folder and adds some content to the file.</p>
+<h2>Running the script</h2>
+<p>Now we’re going to check the script is valid and execute the script.</p>
+<p>Open a command window and use the puppet command to check the syntax of the script;</p>
+<blockquote><pre>puppet parser validate MyFirstScript.pp</pre>
+</blockquote>
+<p>Now to run this locally at the command line.</p>
+<blockquote><pre>puppet apply MyfirstScript.pp</pre>
+</blockquote>
+<p>You should now be able to&nbsp; navigate to the file to check it’s been created.</p>
+<h2>Next steps</h2>
+<p>This isn’t particularly useful but it shows how to install and run your first script in puppet.</p>
+<p>Puppet labs have some great resources to <a href="https://learn.puppetlabs.com/category/self-paced-training">learn</a> about puppet and there are plenty of <a href="https://forge.puppetlabs.com/?_ga=1.208143442.196027094.1436091548">example modules</a> and <a href="http://www.puppetcookbook.com/">cookbooks</a>.</p>
+</blockquote>

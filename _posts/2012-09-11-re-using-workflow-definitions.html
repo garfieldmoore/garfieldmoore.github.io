@@ -1,0 +1,63 @@
+---
+layout: post
+title: Re-using workflow definitions
+date: 2012-09-11 19:56:45.000000000 +01:00
+categories:
+- Objectflow
+tags:
+- objectflow
+- workflow
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>In the last post I showed how to define a workflow;</p>
+<pre style="padding-left:30px;">var workflow = Workflow&lt;CustomerState&gt;.Definition()
+  .Configure()
+  .On&lt;Exception&gt;(() =&gt; Console.WriteLine("Caught an exception"))
+  .When&lt;CustomerState&gt;()
+  .Do&lt;PlaceOrder&gt;()
+  .Do&lt;PayForCoffee&gt;()
+  .Do&lt;PickUp&gt;();</pre>
+<p>Although this is fine for defining small workflows, this would be cumbersome for more complex workflows.</p>
+<p>The frameworks AsAWorkflow&lt;T&gt; abstract class solves this problem.  All we have to do is create a derived class and copy the above code into the Configure() method;</p>
+<pre style="padding-left:30px;">public class CoffeeCustomerService : AsAWorkflow&lt;CustomerState&gt;
+{
+    // Obsolete contructor
+    public CoffeeCustomerService(IDefine&lt;CustomerState&gt; workflow) : base(workflow)
+    {
+    }
+
+    // Obsolete method
+    public override void Configure(IDefine&lt;CustomerState&gt; workflow)
+    {
+    }
+
+    public override IWorkflow&lt;CustomerState&gt; Configure()
+    {
+        return Workflow&lt;CustomerState&gt;.Definition()
+          .Configure()
+            .On&lt;Exception&gt;(() =&gt; Console.WriteLine("Caught an exception"))
+            .When&lt;CustomerState&gt;()
+            .Do&lt;PlaceOrder&gt;()
+            .Do&lt;PayForCoffee&gt;()
+            .Do&lt;PickUp&gt;();
+     }
+}</pre>
+<p>The constructor and parameterised Configure method are obsolete and will be removed in a future release.  The workflow is defined in the Configure() method as usual.</p>
+<p>All the client has to do is instantiate this class and pass the initial state to the start method;</p>
+<pre style="padding-left:30px;">var coffeeCustomerWorkflow = new CoffeeCustomerService(new Workflow&lt;CustomerState&gt;());
+var customerState = new CustomerState();
+coffeeCustomerWorkflow.Start(customerState);</pre>
+<p>This is a bit tidier and more re-useable.</p>
+<p>The next minor release will have a default constructor for this class as we plan to obsolete the parameterized constructor.</p>

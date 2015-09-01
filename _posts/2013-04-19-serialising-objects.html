@@ -1,0 +1,63 @@
+---
+layout: post
+title: Testing serialization
+date: 2013-04-19 20:38:53.000000000 +01:00
+categories:
+- TDD
+tags:
+- ".Net"
+- Serialization
+- TDD
+- Testing
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+  _wpas_skip_4780980: '1'
+  _wpas_skip_4781430: '1'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>A common problem I see is broken integration tests because objects can’t be serialised across service boundaries. It’s easy to forget to decorate a class or property with the DataContract attribute.</p>
+<p>Catching this during integration tests can lead to large slow running test suites and wasted time troubleshooting, as it is rarely obvious what has the issue is.</p>
+<p>One goal of continuous integration is to catch errors as early in the process as possible and it turns out this can be caught during unit tests.</p>
+<p>It’s simple to add unit tests to ensure a class or property is decorated with the correct attribute;</p>
+<pre>[Test]     
+public void DataMembersSetAsExpected()   
+  {            
+       var type = typeof(BankAccount);           
+       Assert.That(type.IsDefined(
+            typeof(System.Runtime.Serialization.DataContractAttribute), true));
+       CheckForDataMemberAttribute(type, "SortCode"); 
+  }
+  private static void CheckForDataMemberAttribute(Type type, string property)
+      {
+          var idProperty = type.GetProperty(property);
+          Assert.That(idProperty.IsDefined(
+             typeof (System.Runtime.Serialization.DataMemberAttribute), true));
+        }
+    }</pre>
+<p>The main problem with this implementation is developers need to remember to update the test when a new property is added or removed.</p>
+<p>It would be simple to refactor this to check all properties on a class using reflection.</p>
+<p>However, this isn’t ideal as it will lead to false negatives as properties that won’t be serialised are still checked.</p>
+<p>The approach I’ve adopted is to use the DataContractSerialiser to test if an object can serialised;</p>
+<pre>    [Test]
+    public void Should_Serialise_across_service_boundary()
+    {
+        var s = new DataContractSerializer(typeof(BankAccount));
+        var account = new BankAccount() { Owner = new Person() };
+        s.WriteObject(new MemoryStream(), account);
+    }</pre>
+<p>This has the advantage that it will only test properties that will be serialised and developers don’t have to remember to change the test when adding or removing properties.</p>
+<h2>Conclusion</h2>
+<p>Testing objects can be serialised in integration tests results in slow test suites and fails to catch the defect as early as possible.</p>
+<p>One approach to unit testing serialisation is to verify classes have been decorated with the DataContract and DataMember attributes.</p>
+<p>However, this leads to false positives when developers forget to refactor tests when adding properties.</p>
+<p>The approach I am currently using it to use the DataContractSerialiser class to ensure a class instance can be successfully serialised.</p>

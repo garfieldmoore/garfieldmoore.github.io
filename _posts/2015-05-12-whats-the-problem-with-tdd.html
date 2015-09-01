@@ -1,0 +1,74 @@
+---
+layout: post
+title: What's the problem with TDD?
+date: 2015-05-12 15:04:41.000000000 +01:00
+categories:
+- ".Net"
+- TDD
+tags:
+- BDD
+- TDD
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  publicize_google_plus_url: https://plus.google.com/104210547641993449129/posts/iiUKVDjCPsm
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _wpas_done_4964787: '1'
+  _publicize_done_external: a:1:{s:11:"google_plus";a:1:{s:21:"104210547641993449129";b:1;}}
+  publicize_twitter_user: garfieldmoore
+  publicize_twitter_url: http://t.co/unZC5gLOpy
+  _wpas_done_4780980: '1'
+  _wpas_linkedin_publicize_failure: |-
+    O:13:"Keyring_Error":2:{s:6:"errors";a:1:{s:21:"keyring-request-error";a:1:{i:0;a:5:{s:7:"headers";a:11:{s:6:"server";s:17:"Apache-Coyote/1.1";s:15:"x-li-request-id";s:10:"PDFUWGET1U";s:4:"date";s:29:"Tue, 12 May 2015 15:06:03 GMT";s:4:"vary";s:1:"*";s:11:"x-li-format";s:4:"json";s:12:"content-type";s:30:"application/json;charset=UTF-8";s:16:"content-encoding";s:4:"gzip";s:11:"x-li-fabric";s:9:"prod-ltx1";s:8:"x-li-pop";s:9:"PROD-ELA4";s:9:"x-li-uuid";s:24:"DmMIEfmB3RNQx2c8wioAAA==";s:10:"set-cookie";s:154:"lidc="b=TB17:g=126:u=64:i=1431443163:t=1431511238:s=AQFRN-TrVgacqGEVynmhaWYtdnNPsCV5"; Expires=Wed, 13 May 2015 10:00:38 GMT; domain=.linkedin.com; Path=/";}s:4:"body";s:175:"{
+      "errorCode": 0,
+      "message": "[unauthorized]. Expired access token. Timestamp: 1410868637200",
+      "requestId": "PDFUWGET1U",
+      "status": 401,
+      "timestamp": 1431443163430
+    }";s:8:"response";a:2:{s:4:"code";i:401;s:7:"message";s:12:"Unauthorized";}s:7:"cookies";a:1:{i:0;O:14:"WP_Http_Cookie":5:{s:4:"name";s:4:"lidc";s:5:"value";s:80:""b=TB17:g=126:u=64:i=1431443163:t=1431511238:s=AQFRN-TrVgacqGEVynmhaWYtdnNPsCV5"";s:7:"expires";i:1431511238;s:4:"path";s:1:"/";s:6:"domain";s:13:".linkedin.com";}}s:8:"filename";N;}}}s:10:"error_data";a:0:{}}
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=20952117&stype=M&topic=6004241923794096128&type=U&a=Kd29
+  publicize_facebook_url: https://facebook.com/10204936942076669
+  _wpas_done_11337921: '1'
+  _wpas_done_4781430: '1'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Have you ever worked on a system where the tests slow you down?</p>
+<p>Do the tests break even with the smallest change?</p>
+<p>Are the tests brittle?</p>
+<p>Is it really hard to write a test? Lots of setup, mocks and expectations?</p>
+<p>I've worked on these and I'm pretty sure I'm not alone.</p>
+<p>So what's the problem with TDD?</p>
+<h2><strong>Feedback loops</strong></h2>
+<p>To understand the problem we have to understand feedback loops.</p>
+<p>The use of feedback loops is crucial in engineering; the components in a system provide feedback that reinforces or reduces change.</p>
+<p>There are two types of feedback loops; positive and negative.</p>
+<p><strong>Negative feedback</strong></p>
+<p>Negative feedback loops move systems towards stability.</p>
+<p>Negative feedback loops act as a damper to, or prohibits, change.</p>
+<p>An example of a negative feedback loop in engineering is the <a href="http://en.wikipedia.org/wiki/Centrifugal_governor">centrifugal governor</a>. This limits the speed of the engine by limiting fuel supply.</p>
+<p><strong>Positive feedback</strong></p>
+<p>Positive feedback loops moves systems towards instability.</p>
+<p>Positive feedback loops reinforce change. A change reinforces itself and creates more of the same change.</p>
+<p>An oscillator is an example of a positive feedback loop.</p>
+<h2><strong>Tests as a feedback loop</strong></h2>
+<p>In much the same way, unit tests are an example of a negative feedback loop.  When one breaks we stop and fix it. It is enforcing stability.</p>
+<p>However, tests are also providing feedback when you are writing them. If it’s hard to write a test, your design is likely sub-optimal for the change you are trying to make.</p>
+<p>For example, if there are lots of dependencies to mock and expectations to set up, we may have missed a needed abstraction that combines them.</p>
+<p>The longer we put up with tests that are getting harder to write, the more our software degrades.</p>
+<h2><strong>Designing feedback loops</strong></h2>
+<p>We have to be careful how we design our feedback loops. If our tests are too fine grained our feedback loop will be too tight, limiting the changes we can make to our system. This will reduce our ability to change our software.</p>
+<p>We need the feedback to ensure we haven't broken anything while at the same time we want to be able to change the implementation details of our software.</p>
+<h2><strong>Conclusion</strong></h2>
+<p>Our tests are feedback loops, telling us, not only when changes are wrong, but also when our changes cannot easily be supported in the design.</p>
+<p>If we ignore our tests it will become harder to work within our system over time.</p>
+<p>We need to be careful how fine grained we make our tests; too fine and we won't be able to change our software. Not fine enough and we will inadvertently break some behaviour of our software.</p>

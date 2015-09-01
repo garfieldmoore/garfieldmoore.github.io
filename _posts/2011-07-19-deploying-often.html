@@ -1,0 +1,26 @@
+---
+layout: post
+title: deploying often
+date: 2011-07-19 20:09:18.000000000 +01:00
+categories:
+- Continuous Integration
+tags:
+- Agile
+- CI
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>I've read a lot about blue/green deployments recently.</p>
+<p>But how is the switch done between your old and new websites?  More importantly, how can I do it easily without complicated proxies and fail-over technologies?</p>
+<p>One method that occurred to me is to lower your dns time to live (TTL), change the dns name record to point to the new software, if the new software disrupts service, change it back and your website is back online.</p>

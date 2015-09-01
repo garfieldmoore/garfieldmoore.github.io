@@ -1,0 +1,30 @@
+---
+layout: post
+title: Accessing github through a http proxy
+date: 2012-05-01 19:44:15.000000000 +01:00
+categories:
+- Git
+tags:
+- Git
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>Accessing gitub can be difficult at work;  ssh tunneling is often blocked by firewalls and proxies make it difficult to use http.</p>
+<p>The solution is to set the http_proxy environment variable;</p>
+<p>export http_proxy=[PROXY_SETTING]</p>
+<p>You can now clone a public git repository over http.</p>
+<p>However, this is only half the solution as private repositories use https so this setting doesn't work.</p>
+<p>The solution is the similar https_proxy environment variable.  Set this with the below command;</p>
+<p>export https_proxy=[PROXY_SETTING]</p>
+<p>You can now clone public and private repositories with http and https through your companies proxy.</p>

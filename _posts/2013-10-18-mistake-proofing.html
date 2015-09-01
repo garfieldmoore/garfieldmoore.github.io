@@ -1,0 +1,71 @@
+---
+layout: post
+title: Mistake proofing
+date: 2013-10-18 12:42:04.000000000 +01:00
+categories:
+- ".Net"
+- Continuous Integration
+- TDD
+tags:
+- ".Net"
+- poka-yoke
+- TDD
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+  publicize_twitter_user: garfieldmoore
+  publicize_twitter_url: http://t.co/NKFxGjzZNm
+  _wpas_done_4780980: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:20430620;b:1;}}
+  publicize_linkedin_url: http://www.linkedin.com/updates?discuss=&scope=20952117&stype=M&topic=5796948732163399680&type=U&a=3amU
+  _wpas_done_4781430: '1'
+  _wpas_skip_4964787: '1'
+  _wpas_skip_4780980: '1'
+  _wpas_skip_4781430: '1'
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>In previous posts I described how I <a href="http://garfieldmoore.co.uk/2013/10/02/testing-serialization-part-ii">test serialization</a> of objects.</p>
+<p>However, I still forget to do this. So, I've written tests to remind me. This is an idea from Lean engineering called poka yoke (see http://en.wikipedia.org/wiki/Poka-yoke).</p>
+<p>The concept is simple - make it impossible or hard for someone to make mistakes that go unnoticed.</p>
+<p>I use the convention of putting all the classes that need to be serialized in a contracts namespace. This makes it simple to write a test to check all these classes are defined with the DataContract attribute.</p>
+<pre style="padding-left:30px;"><code>        [Test]
+        public void All_classes_in_contract_namespace_should_implement_datacontract()
+        {
+            IList allClassesInContractsNamespace = ReflectionHelper.GetAllTypesWhere(x=&gt;x.Namespace.Contains("Contracts") &amp;&amp; x.IsClass).ToList();
+
+            allClassesInContractsNamespace.Count.ShouldBeGreaterThan(0);
+
+            foreach (object obj in allClassesInContractsNamespace)
+            {
+                var dataContract = obj.GetType().GetCustomAttributes(typeof(DataContractAttribute), false).OfType().FirstOrDefault();
+                dataContract.ShouldNotBe(null);
+            }
+        }
+</code></pre>
+<p>The ReflectionHelper extension method encapsulates how I'm using Autofac to get a list of types. This makes it simpler to re-use in my tests as well as change the method of reflecting over types in the future;</p>
+<pre style="padding-left:30px;"><code>public static IEnumerable GetAllTypesWhere(Func predicate)
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterAssemblyTypes(typeof(Invoice).Assembly)
+                   .Where(predicate.Invoke)
+                   .As();
+
+            IContainer container = builder.Build();
+            var controllers = container.Resolve&lt;IEnumerable&gt;();
+
+            return controllers;
+        }
+</code></pre>
+<p>This technique can be extended to any frequent mistake.</p>
+<h2>Conclusion</h2>
+<p>We have a lot of tools to help us not make mistakes; modern development tools help a lot. Third party tools exist such as re-sharper, style-cop, and FxCop. Our build systems run our unit tests and these static analysis tools.</p>
+<p>We can take this further by writing tests that check for our most common mistakes.</p>

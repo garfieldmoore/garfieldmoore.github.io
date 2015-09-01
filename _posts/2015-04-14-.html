@@ -1,0 +1,40 @@
+---
+layout: post
+title: ''
+date: 2015-04-14 13:42:48.000000000 +01:00
+categories:
+- ".Net"
+tags: []
+status: draft
+type: post
+published: false
+meta: {}
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><strong>Thoughts on Test Driven Development</strong></p>
+<p>One of the benefits asserted of TDD is to provide fast feedback to developers so we can have confidence a change has not inadvertently broken some desired behaviour.</p>
+<p>However, there seems to be a discrepancy between these purported benefits and what happens on real world projects.</p>
+<p>This fast feedback and confidence in our changes should translate to improved productivity. Instead, all too often, I find tests that inhibit change.  It’s often hard to write tests.  In fact, quite often, the tests take an order of magnitude longer to write than does the code it supports.</p>
+<p>So what’s going on?</p>
+<p><strong>Feedback loops</strong></p>
+<p>The use of feedback loops is crucial in engineering; systems components provide feedback that reinforces or reduces change.</p>
+<p>There are two types of feedback loops; positive and negative.</p>
+<p>Positive feedback loops reinforce change. One example of a positive feedback loop is a snowball rolling downhill. The more it travels downhill, the more snow it amasses, the more it travels downhill.  Positive feedback loops moves towards instability.</p>
+<p>Negative feedback acts as a damper to, or prohibits, change.  An example is the cruise control in your car; as the terrain changes and your car goes downhill, picking up speed, your cruise-control will ease off the accelerator.  Negative feedback loops tend to move towards an equilibrium.</p>
+<p><strong>Tests as feedback loops</strong></p>
+<p>Tests can be seen as providing negative feedback by providing control over the development cycle; when a test breaks, you should stop and fix it.</p>
+<p>However, tests are also providing feedback when you are writing them.  If it’s hard to write a test, your design is likely sub-optimal for the change you are trying to make.</p>
+<p>If we ignore our tests it will become harder to work within our system over time.  It is easier to correct a problem with a few tests than with a lot of them.  Also, the effect of design flaws are accumulative; not fixing one now often leads to further incorrect design and bigger or perhaps just more problems later.</p>
+<p><strong>Conclusion</strong></p>
+<p>Tests are a control mechanism that provides feedback to the developer. They are an example of a negative feedback loop.</p>
+<p>They provide feedback when they fail, indicating a change has an undesirable side effect.</p>
+<p>However, they also provide feedback when developing the tests.  If it’s hard to write a test we should stop and consider if the system is telling us there is something is wrong with our design, given the change we are trying to make.</p>
+<p>Negative feedback loops are most effective when used to apply a minor correction in a timely manner.</p>
+<p>Therefore, when writing tests we should be conscious of how much effort it takes to write a test for our change.  If it’s increasingly hard to write tests, we should consider whether it’s time to refactor our design to better support our changes.</p>

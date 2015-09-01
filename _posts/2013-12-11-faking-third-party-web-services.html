@@ -1,0 +1,87 @@
+---
+layout: post
+title: Faking third party web services
+date: 2013-12-11 18:23:26.000000000 +00:00
+categories:
+- ".Net"
+- TDD
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '20508111'
+  _wpas_skip_4780980: '1'
+  publicize_google_plus_url: https://plus.google.com/104210547641993449129/posts/fACHL3V15kv
+  _wpas_done_4964787: '1'
+  _publicize_done_external: a:1:{s:11:"google_plus";a:1:{s:21:"104210547641993449129";b:1;}}
+  publicize_twitter_user: garfieldmoore
+  publicize_twitter_url: http://t.co/mybq1Gn8yZ
+  _wpas_done_4780980: '1'
+  publicize_linkedin_url: ''
+  _wpas_done_4781430: '1'
+  _wpas_skip_4964787: '1'
+  _wpas_skip_4781430: '1'
+  _oembed_988cd0a517618ab4418444dfeafdadb6: "{{unknown}}"
+  _oembed_efb0a22f6aa430f0b9a8b5eb67bafadd: "{{unknown}}"
+  _oembed_9f9921d17c635341c267655554956816: "{{unknown}}"
+  _oembed_4d6a05d41e1826b988d1021b9232d9cc: "{{unknown}}"
+  _oembed_fc5d4552d27e53108113b942fc1bfa70: "{{unknown}}"
+author:
+  login: garfieldmoore
+  email: garfieldmoore@gmail.com
+  display_name: Garfield Moore
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p>I've worked on a number of projects that relied on third party web services or API's.  Most of these had a test service but didn't provide a way to return a predetermined response.</p>
+<p>This left two choices when testing our software; call the test service or create a fake service of our own</p>
+<h2>Third party test services</h2>
+<p>Usually the purpose of a test service is to ensure that your production systems will work with their production systems.  So it is used for testing the integration of two systems.</p>
+<p>This usually means the only difference is the data is not real or is a sub-set of the live data.  Using it still requires calls across service boundaries (HTTP), expensive computation and storage (like databases).</p>
+<p>This creates a number of issues when executing an automated test suite for your software;</p>
+<ul>
+<li>Calls across services boundaries are expensive, resulting in slow tests and slow feedback</li>
+<li>Tests will be brittle because the data can change, leading to different results over time</li>
+<li>You may not have access even to the test service in the environment you are running your tests</li>
+</ul>
+<h2>Faking services</h2>
+<p>The solution is invariably to create a fake service that can be configured to return a specific response.</p>
+<p>I've done this a few times and without exception the solution has become a maintenance burden. Some  of the problems I've experienced are below;</p>
+<ul>
+<li>Fake is not re-usable across projects</li>
+<li>Duplication of fakes across teams</li>
+<li>Different fakes for different third party services</li>
+</ul>
+<p>This leads to a lot of duplication of effort and lost time.</p>
+<h2>Proxy servers</h2>
+<p>After realising this could be solved with a proxy server I created <a href="https://github.com/garfieldmoore/Boomerang">Boomerang</a> to make this easier.  This enables developers to set predetermined responses for HTTP requests.</p>
+<p>For example, I can specify a json object should be returned from a GET for a specific relative address;</p>
+<pre style="padding-left:30px;"><code>var dictionary = new Dictionary&lt;string, string&gt;() { { "content-type", "application/json" } };
+Boomerang.Server(5100).Get("/api/products").Returns(products.SerialiseToJsonString(), 200, dictionary);
+</code></pre>
+<p>This creates a proxy server on port 5100 and specifies the response to a HTTP GET request to the relative uri /api/products should be a list of Products formatted as json.</p>
+<p>I created an extension method to help with the json serialisation;</p>
+<pre style="padding-left:30px;"><code>public static string SerialiseToJsonString(this object target)
+        {
+            string str;
+
+            var dataContractJsonSerializer = new DataContractJsonSerializer(target.GetType());
+
+            using (var mem = new MemoryStream())
+            {
+                dataContractJsonSerializer.WriteObject(mem, target);
+                mem.Flush();
+                mem.Position = 0;
+                str = Encoding.Default.GetString(mem.ToArray());
+                Console.WriteLine(str);
+            }
+
+            return str;
+        }
+</code></pre>
+<h2>Conclusion</h2>
+<p>GET, POST, PUT and delete are supported and the base address is ignored.  If <a href="https://github.com/garfieldmoore/Boomerang">Boomerang</a> receives a request it hasn't got a response for it will return an error response.</p>
+<p>I hope this makes testing with third party services a bit easier!</p>
