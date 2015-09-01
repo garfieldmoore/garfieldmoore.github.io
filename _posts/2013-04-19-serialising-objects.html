@@ -2,28 +2,7 @@
 layout: post
 title: Testing serialization
 date: 2013-04-19 20:38:53.000000000 +01:00
-categories:
-- TDD
-tags:
-- ".Net"
-- Serialization
-- TDD
-- Testing
-status: publish
-type: post
-published: true
-meta:
-  _edit_last: '20508111'
-  _wpas_skip_4780980: '1'
-  _wpas_skip_4781430: '1'
-author:
-  login: garfieldmoore
-  email: garfieldmoore@gmail.com
-  display_name: Garfield Moore
-  first_name: ''
-  last_name: ''
-excerpt: !ruby/object:Hpricot::Doc
-  options: {}
+categories: TDD
 ---
 <p>A common problem I see is broken integration tests because objects can’t be serialised across service boundaries. It’s easy to forget to decorate a class or property with the DataContract attribute.</p>
 <p>Catching this during integration tests can lead to large slow running test suites and wasted time troubleshooting, as it is rarely obvious what has the issue is.</p>
