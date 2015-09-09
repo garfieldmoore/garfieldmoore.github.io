@@ -4,6 +4,17 @@ title: About
 permalink: /about/
 ---
 
-I started programming back in the early 80's using Z80, &6502 assembler. I now specialise in continuous deployment, software architecture and agile development practises.
+Hi, my name is Garfield.  
 
-When not programming I can be found in South East London with my partner, two lovely daughters and our assortment of cats, snakes and spiders.
+I'm a polyglot programmer, coach and architect.  I consult on continuous delivery, software design and software process.
+
+I love my job because it's always different and I get to do lots of challenging stuff. 
+
+One day I'm designing solutions, another I might be helping customers write stories and prioritise features.  Yet another day will find me pairing with developers or coaching engineering practises.
+
+
+I am passionate about continuous improvement and love helping teams improve thier practises.
+
+I love working on complex systems and enjoy learning new and interesting domains.  I'm an advocate of open source software and truly believe using and creating OOS is the best way to create great software.
+
+Working in software development is awesome.  To stop learning is to die.
