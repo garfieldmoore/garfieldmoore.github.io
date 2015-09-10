@@ -9,15 +9,33 @@
                 </button>              
                 <a class="navbar-brand" href="{{ site.baseurl }}/">
                     <i class="fa fa-play-circle"></i>  <span class="light">{{ site.title }}</span> 
-
                 </a>
+            </div>
 
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                                  {% for page in site.pages %}
+                                    {% if page.title %}
+                    <li class="">
+                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    </li>
+
+                                    {% endif %}
+                                  {% endfor %}
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
                   <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                           <div class="wrapper">
-
-                           
-
                               <nav class="site-nav">
                                 <a href="#" class="menu-icon">
                                   <svg viewBox="0 0 18 15">
@@ -27,23 +45,15 @@
                                   </svg>
                                 </a>
 
-                                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                                  {% for page in site.pages %}
-                                    {% if page.title %}
-                                    <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                                    {% endif %}
-                                  {% endfor %}
-                                </div>
                               </nav>
 
                             </div>
             </div>
                     </div>
+
                 </div>
             </div>
         </div>
-  
-
 </header>
 
  
