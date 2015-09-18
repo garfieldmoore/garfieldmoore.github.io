@@ -1,0 +1,49 @@
+Git demo
+---------
+
+What shall we cover?
+--------------------
+* Housekeeping   5 min
+* Installing     5 minbrach
+* Basic workflow - 10 min
+** create a repository
+* Getting help
+* HHow ow git works
+** 3 views on git
+*** Working Directory
+*** Index
+*** Head
+** Distributed
+** Trust based
+* Demo
+** Create a repository
+** Getting help
+** Add new file
+** commit changes
+** Reverting changes
+** Branches
+** Branching strategies
+** checking out branches
+** merging branch back to master
+** Push your branch to remote repository
+** Using stash for pull requests
+** Cloning an existing repository
+** Some common configuration
+*** Your name and email
+*** Alias
+* Resources
+** GIT SCm
+** Tools
+*** Git GUI
+*** Git mergetool
+* Tools
+** Git gui
+** git mergetool
+** git extensions
+** smart git
+** source tree
+
+
+What have we covered
+--------------------
+Creating repo
