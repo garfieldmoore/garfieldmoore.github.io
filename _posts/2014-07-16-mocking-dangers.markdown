@@ -20,18 +20,18 @@ Given this design we might end up with tests similar to the ones below;
 	    [Test]
 	    public void Service_invokes_repository()
 	    {
-	        var repository = Substitute.For&lt;IRepository&gt;();
-	        var service = new ToDoService(repository, Substitute.For&lt;IMapper&lt;ToDoTask, TaskResource&gt;&gt;());
+	        var repository = Substitute.For<IRepository>();
+	        var service = new ToDoService(repository, Substitute.For<IMapper<ToDoTask>,TaskResource>() mapper);
 	        service.GetAll();
 	        repository.Received(1).GetAll();
 	     }
 
 	     public void Service_should_return_resources()
 	     {
-	         var repository = Substitute.For&lt;IRepository&gt;();
+	         var repository = Substitute.For<IRepository>();
 	         var toDoTask = new ToDoTask() { Note = "new todo task" };
 	         repository.GetAll().Returns(new[] { toDoTask });
-	         var mapper = Substitute.For&lt;IMapper&lt;ToDoTask, TaskResource&gt;&gt;();
+	         var mapper = Substitute.For<IMapper<ToDoTask>, TaskResource>();
 	         mapper.Map(Arg.Any()).Returns(new TaskResource() { Note = "new todo task" });
 	      
 	         var service = new ToDoService(repository, mapper);
@@ -70,7 +70,7 @@ Now, imagine if we just tested this code from the service and treated the mapper
 	    [Test]
 	    public void Service_invokes_repository()
 	    {
-	        var repository = Substitute.For&lt;IRepository&lt;ToDoTask&gt;&gt;();
+	        var repository = Substitute.For<IRepository<ToDoTask>>();
 	    
 	        var service = new ToDoService(repository);
 	        service.GetAll();
@@ -80,8 +80,8 @@ Now, imagine if we just tested this code from the service and treated the mapper
 
 	    public void Service_should_return_resources()
 	    {
-	        var repository = Substitute.For&lt;IRepository&lt;ToDoTask&gt;&gt;();
-	        var toDoTasks = Builder&lt;ToDoTask&gt;.CreateListOfSize(1).Build();    
+	        var repository = Substitute.For<IRepository<ToDoTask>>();
+	        var toDoTasks = Builder<ToDoTask>.CreateListOfSize(1).Build();    
 	        repository.GetAll().Returns(toDoTasks);
 
 	        var service = new ToDoService(repository);
