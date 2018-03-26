@@ -1,8 +1,15 @@
 ---
  layout: post
-title:	Testing serialization part II
-date:	2013-10-02 22:10:03
+title:	"Testing serialization part II"
+date:	2013-10-02 22:10:03.000000000 +01:00
 categories:	"Continuous Integration" "TDD"
+
+published: true
+type: post
+featured: false
+author: garfieldmoore
+
+image: '/images/posts/testing.jpeg'
 ---
 
 <p>My previous post on <a title="testing serialization" href="http://garfieldmoore.co.uk/2013/04/19/serialising-objects/">testing serialization</a> was in-complete.  Since then my tests have evolved enough to warrant another post (at least I think so).</p>
@@ -101,9 +108,9 @@ public interface IParty
 <p>And finally, we test the deserialized object's properties are the same as the original;</p>
 <pre style="padding-left:30px;"><code>private void ThenAllPropertiesShouldBeSet()
 {
-    savedAccountDetails.ShouldNotBe(null); 
-    savedAccountDetails.SortCode.ShouldBe(account.SortCode); 
-    savedAccountDetails.AccountNumber.ShouldBe(account.AccountNumber); 
+    savedAccountDetails.ShouldNotBe(null);
+    savedAccountDetails.SortCode.ShouldBe(account.SortCode);
+    savedAccountDetails.AccountNumber.ShouldBe(account.AccountNumber);
     savedAccountDetails.Owner.Name.ShouldBe(person.Name
     ((Person)savedAccountDetails.Owner).DateOfBirth.ShouldBe(person.DateOfBirth);</code></pre>
 <p>}</p>
@@ -133,7 +140,7 @@ public interface IParty
     storeStream = new MemoryStream();
     serializer = new DataContractSerializer(typeof(BankAccount));
     serializer.WriteObject(storeStream, account);
-} 
+}
 
 private void WhenDeserializingFromStream()
 {

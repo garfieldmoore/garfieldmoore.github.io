@@ -1,9 +1,19 @@
 ---
 layout: post
-title: Reading Xml files
+title: "Reading Xml files"
 date: 2013-09-30 11:08:18.000000000 +01:00
 categories: ".Net"
+tags: ".net"
+
+published: true
+type: post
+featured: false
+author: garfieldmoore
+
+image: '/images/posts/reading.jpeg'
 ---
+
+
 <p>On a recent project we needed to read data from a file. We couldn't simply de-serialize using the built in .net serialization as the file format had already been defined and we didn't have the time to write custom serialization. So our problem was that given an xml file format such as the one below, how best to consume it? <code></code></p>
 <pre style="padding-left:30px;">&lt;Products&gt;
 &lt;Product name="Name1" manufacturer="Manufacturer1"/&gt;
@@ -34,7 +44,7 @@ public class XmlEntityReader&lt;T&gt; where T : class
     }
 
     public T Read(Stream storeStream)
-    {  
+    {
         storeStream.Position = 0;
         T settings;
         var serializer = new XmlSerializer(typeof(T));

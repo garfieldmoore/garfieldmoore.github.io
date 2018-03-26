@@ -1,20 +1,31 @@
 ---
 layout: post
 title: Testing serialization
+description: introducing some ways to test objects serialise correctly in the .net framework
+excerpt: introducing some ways to test objects serialise correctly in the .net framework
 date: 2013-04-19 20:38:53.000000000 +01:00
 categories: TDD
+
+published: true
+type: post
+featured: false
+author: garfieldmoore
+
+categories: devops
+image: '/images/posts/testing.jpeg'
+
 ---
 <p>A common problem I see is broken integration tests because objects can’t be serialised across service boundaries. It’s easy to forget to decorate a class or property with the DataContract attribute.</p>
 <p>Catching this during integration tests can lead to large slow running test suites and wasted time troubleshooting, as it is rarely obvious what has the issue is.</p>
 <p>One goal of continuous integration is to catch errors as early in the process as possible and it turns out this can be caught during unit tests.</p>
 <p>It’s simple to add unit tests to ensure a class or property is decorated with the correct attribute;</p>
-<pre>[Test]     
-public void DataMembersSetAsExpected()   
-  {            
-       var type = typeof(BankAccount);           
+<pre>[Test]
+public void DataMembersSetAsExpected()
+  {
+       var type = typeof(BankAccount);
        Assert.That(type.IsDefined(
             typeof(System.Runtime.Serialization.DataContractAttribute), true));
-       CheckForDataMemberAttribute(type, "SortCode"); 
+       CheckForDataMemberAttribute(type, "SortCode");
   }
   private static void CheckForDataMemberAttribute(Type type, string property)
       {

@@ -3,6 +3,8 @@ layout: post
 title: Code tag cloud
 date: 2015-05-20 08:51:53
 categories:	".Net"
+image: '/images/posts/tag_cloud.jpeg'
+
 ---
 
 I thought it would be a bit of fun to pass my code through a tag cloud creator. I thought it might give some insights into the domain language.

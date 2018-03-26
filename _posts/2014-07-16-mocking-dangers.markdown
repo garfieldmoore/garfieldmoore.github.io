@@ -3,6 +3,8 @@ layout: post
 title: Mocking dangers
 date: 2014-07-16 19:26:26.000000000 +01:00
 categories: TDD
+image: '/images/posts/mock_danger.jpeg'
+
 ---
 Mocking dependencies allow us to create tests that are fast by removing our dependencies on external systems.
 
@@ -33,10 +35,10 @@ Given this design we might end up with tests similar to the ones below;
 	         repository.GetAll().Returns(new[] { toDoTask });
 	         var mapper = Substitute.For<IMapper<ToDoTask>, TaskResource>();
 	         mapper.Map(Arg.Any()).Returns(new TaskResource() { Note = "new todo task" });
-	      
+
 	         var service = new ToDoService(repository, mapper);
 	         var todos = service.GetAll();
-	      
+
 	         &lt;mapper.Received(1).Map(Arg.Is(toDoTask));
 	         todos.Count().ShouldBe(1);
 	      }
@@ -71,10 +73,10 @@ Now, imagine if we just tested this code from the service and treated the mapper
 	    public void Service_invokes_repository()
 	    {
 	        var repository = Substitute.For<IRepository<ToDoTask>>();
-	    
+
 	        var service = new ToDoService(repository);
 	        service.GetAll();
-	    
+
 	        repository.Received(1).GetAll();
 	    }
 
