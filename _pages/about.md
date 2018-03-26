@@ -12,6 +12,8 @@ I wrote games, utilities, experimented with basic AI and dreamt of a day when ga
 
 When I left school I found myself working in a small, family run  engineering workshop.
 
-The first commercial software I wrote was to automate the complex calculations required to make duct-work for air conditioning.  This enabled the small engineering company to save an immense amount of time - cutting a 10 our job into 2 hours.
+The first commercial software I wrote was to automate the complex calculations required to make air-conditioning duct-work for this company. This reduced making duct-work from 1 day to a couple of hours.
+
+I've gone on to build technology in large and small companies.
 
 I now specialise in programming, software architecture, and agile development practises.
