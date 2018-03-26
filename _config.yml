@@ -1,13 +1,58 @@
 # Site settings
 title: Garfield Moore
-email: 
-description: > # this means to ignore newlines until "baseurl:"
- 
+email: "me@garfieldmoore.co.uk"
+description: Some things I've learnt along the way
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://garfieldmoore.co.uk" # the base hostname & protocol for your site
 twitter_username: garfieldmoore
 github_username:  garfieldmoore
-permalink: /:title
+#permalink: /:title
 # Build settings
 markdown: kramdown
 highlighter: rouge
+
+permalink: pretty
+
+permalink: /:categories/:year/:month/:day/:title.html
+paginate:  12
+
+plugins:
+  - jekyll-paginate
+#  - jekyll/tagging
+#  - classifier-reborn
+
+include:
+  - _pages
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+
+sass:
+  style: compressed
+
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  pretty
+
+# Pages path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+
+# Authors
+authors:
+  garfieldmoore:
+    name:             Garfield Moore
+    bio:              programmer, contrarian, geek
+    gravatar:         https://s.gravatar.com/avatar/755efd2c9f0a9b78362818dbe6b1529b?s=80
+    email:            me@garfieldmoore.co.uk
+    website:          http://garfieldmoore.co.uk
+    github_username:  garfieldmoore
+    twitter_username: garfieldmoore
+    image:            https://s.gravatar.com/avatar/755efd2c9f0a9b78362818dbe6b1529b?s=80

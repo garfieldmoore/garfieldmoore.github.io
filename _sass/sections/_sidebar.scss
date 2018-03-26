@@ -1,0 +1,91 @@
+//---------------------------
+// Sidebar
+//---------------------------
+
+.sidebar {
+  padding: half($line-height__medium) 0;
+  line-height: $line-height__medium;
+  color: $text-color--light;
+  
+  .social-nav {
+    .icon {
+      fill: #FAFAFA;
+    }
+  }
+
+  @media #{$large-down} {
+    background-color: $dark-bg;
+    border-bottom: 1px solid $border-color;
+  }
+
+  @media #{$large-up} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sidebar-width;
+    height: 100%;
+    background-color: $dark-bg;
+    padding: $line-height__base 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  a {
+    color: $text-color--light;
+
+    &:visited {
+      color: $text-color--light;
+    }
+
+    &:hover {
+      color: $text-color--darker;
+    }
+  }
+
+  &__logo {
+    margin-bottom: quarter($line-height__base);
+
+    a {
+      transition: $base-transition-speed;
+      text-decoration: none;
+      letter-spacing: 1px;
+
+      &:hover {
+        color: $text-color--darker;
+      }
+    }
+
+    @media #{$large-down} {
+      margin-bottom: 0;
+      line-height: $line-height__medium;
+    }
+  }
+
+  &__description {
+    margin-bottom: $line-height__medium;
+    padding-bottom: $line-height__medium;
+    border-bottom: 1px solid $border-color--darker;
+
+    @media #{$large-down} { display: none; }
+  }
+
+  &__bottom {
+    text-align: center;
+
+    @media #{$large-up} {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: $line-height__base;
+    }
+  }
+
+  // Add border to sidebar (as header) in homepage in small screen
+
+  @media #{$large-down} {
+    .home-template & {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}

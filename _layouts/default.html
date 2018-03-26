@@ -5,24 +5,22 @@
 
   <body>
 
-    {% include header.html %}
+    <div class="off-canvas-container">
+    {% include sidebar.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+    {{ content }}
 
-    {% include footer.html %}
+  </div>
 
- <!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+  <script src="{{ '/js/jquery-2.1.4.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/evil-icons.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/jquery.fitvids.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/jquery.ghostHunter.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/script.js' | prepend: site.baseurl }}"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
+  <script src="https://use.fontawesome.com/8f46060f30.js"></script>
+
   </body>
 
 </html>

@@ -2,23 +2,18 @@
 layout: default
 ---
 
-<div class="home">
+<div class="wrapper">
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="row row--full">
+    <div class="post-list">
+      {% for post in paginator.posts %}
+        {% include post-card.html %}
+      {% endfor %}
+    </div>
+  </div>
 
-  <ul class="post-list container ">
-  	 	 
-        {% for post in site.posts %}
-          <li>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <div class="row row--full">
+    {% include pagination.html %}
+  </div>
 
-            <h2>
-              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-          </li>
-        {% endfor %}
-      </ul>
-    
-      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>  
 </div>
-

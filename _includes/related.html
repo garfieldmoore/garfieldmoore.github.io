@@ -1,0 +1,22 @@
+<section class="related">
+  <h5 class="separator">
+    <span class="separator__title">Related</span>
+  </h5>
+{% for post in site.related_posts limit:4 %}
+ <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+   <div class="article-item">
+     <header class="post-header">
+       <h4 class="post-title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></h4>
+     </header>
+     <section class="post-excerpt" itemprop="description">
+      {% if post.excerpt_tag %}
+        <p>{{ post.excerpt_tag | markdownify |truncatewords: 50 }}</p>
+      {% else %}
+        <p>{{ post.excerpt }}</p>
+      {% endif %}
+     </section>
+   </div>
+ </article>
+ <hr/>
+{% endfor %}
+</section>
