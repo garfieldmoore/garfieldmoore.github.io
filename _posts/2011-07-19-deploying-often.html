@@ -9,8 +9,9 @@ type: post
 featured: false
 author: garfieldmoore
 
-image: 'images/posts/deploying _often.jpeg'
+image: '/images/posts/deploy_often.jpeg'
 ---
+
 <p>I've read a lot about blue/green deployments recently.</p>
 <p>But how is the switch done between your old and new websites?  More importantly, how can I do it easily without complicated proxies and fail-over technologies?</p>
 <p>One method that occurred to me is to lower your dns time to live (TTL), change the dns name record to point to the new software, if the new software disrupts service, change it back and your website is back online.</p>
