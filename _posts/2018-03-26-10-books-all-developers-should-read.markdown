@@ -84,6 +84,6 @@ Now you've read all these books on writing software, it's time to learn how to b
 
 To write robust, reliable software you need to approach testing your own software from the perspective of breaking it.
 
-That' it! I enjoyed all these books and learnt loads from them - hope you do to.
+That's all folks! I enjoyed all these books and learnt loads from them - hope you do to.
 
 Happy programming!
