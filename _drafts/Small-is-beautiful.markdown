@@ -1,7 +1,7 @@
-When I am working with teams to create a requirements backlog I 
+When I am working with teams to create a requirements backlog I
 always try to break the requirements into bite size pieces.
 
-There are a number of advanges to this that I'll go into detail in this blog.
+There are a number of advantages to this that I'll go into detail in this blog.
 
 One of the problems with the waterfall process of requirements gathering, design, development and testing is that checking the software only happens at the end of the project.  A significant time has elapsed and the customers requirements will have changed (or they might not have known what they wanted in the first place)
 
@@ -23,5 +23,3 @@ This leads to happier customers as they get to try out the product sooner in the
 However, it's not as simple as breaking the work into the smallest number of pieces.  Software engineering does not contain homogeneous work and there are often transaction costs associated with each story.
 
 Teams need to break stories into the smallest piece of work that provides value to your customers.
-
-
