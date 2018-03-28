@@ -16,4 +16,4 @@ The first commercial software I wrote was to automate the arduous calculations r
 
 I've gone on to build technology for large and small companies as well as working in a number of start-ups.
 
-I now specialise in programming, software architecture, and agile development practices.
+I now specialise in software architecture, devops and agile development practices.
