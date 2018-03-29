@@ -7,6 +7,7 @@ layout: default
 {% assign author = site.authors[page.author] %}
 
 <div class="wrapper">
+
   <div class="row row--full">
 
     <div class="column column--center medium-12 large-12">
@@ -36,11 +37,29 @@ layout: default
 
         <hr>
 
+
+
         {% if page.author %}
           {% include author.html %}
         {% endif %}
 
         {% include share.html %}
+<!-- if site.comments.provider and  -->
+
+<h2>Comments</h2>
+      {% if site.data.comments[page.slug].size > 0 %}
+          {% assign comments = site.data.comments[page.slug] | sort %}
+                {% for comment in comments %}
+                {% assign avatar = comment[1].avatar %}
+                {% assign email = comment[1].email %}
+                {% assign name = comment[1].name %}
+                {% assign url = comment[1].url %}
+                {% assign date = comment[1].date %}
+                {% assign message = comment[1].message %}
+                {% include comment.html index=forloop.index avatar=avatar email=email name=name url=url date=date message=message %}
+          {% endfor %}
+        {% endif %}
+
         {% include comments.html %}
 
         <!-- {% include related.html %} -->
