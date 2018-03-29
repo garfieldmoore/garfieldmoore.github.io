@@ -6,16 +6,17 @@
   <!-- e.g. "2016-01-02-this-is-a-post" -->
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
   <div>
+    <label>Comment</label>
+    <textarea name="fields[message]" placeholder="Please type your comments here"></textarea>
+  </div>
+  <div>
     <label>Name</label>
     <input name="fields[name]" type="text">
   </div>
   <div>
-    <label>E-mail</label>
-    <input name="fields[email]" type="email">
+    <label for="email">E-mail</label>
+    <input id="email" name="fields[email]" type="email">
   </div>
-  <div>
-    <label>Comment</label>
-    <textarea name="fields[message]" placeholder="Please type your comments here"></textarea>
-  </div>
+
   <button type="submit">Add comment</button>
 </form>
