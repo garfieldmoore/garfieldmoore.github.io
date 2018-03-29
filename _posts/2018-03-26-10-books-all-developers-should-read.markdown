@@ -10,7 +10,7 @@ type: post
 featured: false
 author: garfieldmoore
 
-image: '/images/posts/naked_lunch.jpeg'
+image: '/images/posts/books.jpeg'
 
 ---
 
