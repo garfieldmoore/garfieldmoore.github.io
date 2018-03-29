@@ -70,7 +70,7 @@ There may be any number of reasons for this;
 
 Firstly, on reaching the posthuman stage we may not want to run simulations simply because our motivations and interests have changed.
 
-Another possibility is that we may impose strict sanctions on running simulations as we become aware of moral or ethical issues.
+Another possibility is that we may impose strict sanctions on running simulations as we become aware of moral or ethical issues.  To make this viable posthuman civilisations must converge on a path where no one individual has the wealth or freedom to run simulations despite the sanctions otherwise.
 
 These are not the only possibilities. Showing the above two are false does not prove this scenario is false.
 
