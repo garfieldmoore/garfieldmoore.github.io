@@ -1,9 +1,39 @@
-When I am working with teams to create a requirements backlog I
-always try to break the requirements into bite size pieces.
+One of the problems I constantly see in the teams I help is long cycle times and disagreement about what was in or out of scope for a piece of work.  In other words, the work takes too long and there is no clear direction or there is ambiguity in the work.
 
-There are a number of advantages to this that I'll go into detail in this blog.
+Some of outward symptons of this problem I have seen are;
 
-One of the problems with the waterfall process of requirements gathering, design, development and testing is that checking the software only happens at the end of the project.  A significant time has elapsed and the customers requirements will have changed (or they might not have known what they wanted in the first place)
+* Stories taking a long time to finish
+* Unexpected delays or extra work required to finish these stories
+* Costly replanning of stories that cause further delays
+* Confusion between team members and upstream workers
+* Lengthy meetings and hand-offs between roles (for example, developers and test)
+* Last minute disagreements on what the scope of a story is or should be
+* Surprise dependencies on other teams
+
+There are a number of causes of this dysfuntion and it would be impossible to coherently address them all in one article.  HowevI am sure there are an infinite number of ways a team can come to this situation.  However, I think there are one or two practises that most commonly cause most of the issues above - or at least, there are one or two pracises that mitigate a large set of the above problemse.  
+
+Therefore, I am going to constrain myself to tackling what I think is one of the most common issues I see; the scope of the story.
+
+If there was one practise I would advocate to a team that is struggling with commitments it would be to create small stories.  Slicing stories into bite size pieces of functionality has a number of advantages.  Not all of these advantages are intuitive.
+
+In this article I will reflect on some of the reasons why some teams don't split stories into small units of work, how this causes some of these problems. I will then go on to discuss how small user stories can be used to reduce these issues.
+
+First, let's let's remind ourselves why agile engineering uses user stories;
+
+One of the problems with the waterfall process of lengthy requirements gathering, design, development and testing is that checking the software only happens at the end of the project.  A significant time has elapsed and the customers requirements will have changed (or they might not have known what they wanted in the first place)
+
+In  contrast Agile teams are more focused on delivering working software to customers.  To this end there is much more focus on the interaction between the customers and the engineering teams.  Requirements take the form of user stories that are 'reminders to have a conversation' [probably dan north].
+
+The below format is well known;
+Given a [role] I want [feature] so that [business value]
+
+How large should a story be.  A story must be somethig that is valueable to your customer independantly. One example given by Mike Cohn is that a report has a header, body and footer.  Therefore, this can be split into no more than 3 stories.
+
+I think this is where teams make the first mistake. Value is hugely subjective.
+
+
+One of the consequences of this change of focus from lots of up front analysis to delivery has a
+
 
 Agile software development teams split stories into small units.  This enables the customers and development team to try out the software and provide feedback to the development teams.
 
