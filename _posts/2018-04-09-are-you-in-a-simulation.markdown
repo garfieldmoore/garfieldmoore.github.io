@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Are you in a simulation
-date: 2018-04-09T00:00:00+01:00
+date: 2018-03-09T00:00:00+01:00
 
 categories: technology
 
@@ -141,11 +141,11 @@ This is known as a [sceptical hypothesis](https://en.wikipedia.org/wiki/Philosop
 
 This seems similiar to the simulation theory.  However, there is an important difference;
 
-It's been debated that the simulation theory is not a sceptical argument - the argument is that we may be in a simulation of reality.
+It's been debated that the simulation theory is not a sceptical argument - the argument is that we may be a simulation of our past.
 
-Therefore, our beliefs about reality hold true even if we are in a simulation.
+Therefore, our beliefs about reality hold true even if we are in a simulation of that reality.
 
-However, it doesn't seem impossible to recast the simulation theory in a way that makes it a sceptical argument. Nor would this make it any less likely.  Why would posthumans simulate thier past - why not simply make up worlds that are not based on reality.
+However, it doesn't seem impossible to recast the simulation theory in a way that makes it a sceptical argument. Why would posthumans only simulate their past - why not simply make up worlds that are not based on reality?
 
 Wouldn't this make it a skeptical argument?  Perhaps, but in the original forms Descartes argument is a sceptical argument whilst the simulation hypothesis is not.
 
