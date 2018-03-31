@@ -15,7 +15,7 @@ image: '/images/posts/simulation_2.jpeg'
 ## Introduction
 Simulation theory has been getting a lot of attention lately.  It seems to have been misinterpreted by some as proof we are most likely in a simulation. However, this seems to me an incorrect conclusion to come to from the argument.
 
-In this article I discuss what simulation theory is, why it's important and what the consequences of the theory are.  
+In this article I discuss what simulation theory is, why it's important and what some of the possbile consequences of the theory are.  
 
 First let's look at what the theory is.
 
@@ -43,7 +43,7 @@ variations thereof).
 3. We are almost certainly living in a computer simulation. It follows that the belief that there is a significant chance that
 we will one day become posthumans who run ancestor‐simulations is false, unless we are currently living in a simulation.
 
-When reading this for the first time it seems there is a missing option.  Surely, there is the possibility that we aren't living in a simulation - that we are living in base reality?
+When reading this for the first time it seems there is a missing option.  Surely, there is the possibility that we aren't living in a simulation - that we are living in base reality even if (1) and (2) are false?
 
 This is covered by the final point -
 >
@@ -163,12 +163,14 @@ So, which of these three scenario's is true or more likely?
 
 Well, it's wasn't Nick Bostrum's purpose to show which one is true - only to show that one of these must be true.
 
-One of them is true, we just don't know which one.  Therefore, it seems the most intelligent course is to ascribe equal weight to them until we have more information.
+One of them is true, we just don't know which one.  Therefore, it seems to me the most intelligent course is to ascribe equal weight to them until we have more information.
 
-Perhaps one day science will be able to discount the simulation hypothesis but, for now at least, it seems we can't know for sure.
+Perhaps one day science will be able to discount one or more of the possibilities but, for now at least, it seems we can't know for sure.
 
-All we can deduce is that if (1) and (2) aren't true, then it's more likely we are in our one of ancestors simulation than it is we will be the creators of the first simulation.  We'd have to be extremely lucky to be in the original reality as opposed to a simulation.  
+All we can deduce is that if (1) and (2) aren't true, then it's more likely we are in one of our ancestors simulations than it is we will be the creators of the first simulation.  We'd have to be extremely lucky to be in the original reality as opposed to a simulation.  
 
-For myself, I hope (1) isn't true as no-one likes the idea of extinction.  Neither does the idea that our simulation could be turned off seem any more palatable.
+Assuming we are not amazingly lucky, I certainly hope (1) isn't true as no-one likes the idea of extinction.  Neither does the idea that our simulation could be turned off seem any more palatable.
 
 Perhaps the best we can hope for is (2). Either that or we need to ensure the simulation is 'interesting' for our ancestors to keep watching!
+
+It may just be that our ancestors have done the posthuman equivalent of going out and leaving the television on.
