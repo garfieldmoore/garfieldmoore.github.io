@@ -13,9 +13,9 @@ author: garfieldmoore
 image: '/images/posts/simulation_2.jpeg'
 ---
 ## Introduction
-Simulation theory has been getting a lot of attention lately.  It seems to have been misinterpreted by some as proof we are most likely in a simulation. However, this seems to me an incorrect conclusion to come to from the argument.
+Simulation theory has been getting a lot of attention lately.  However, it seems to have been misinterpreted by some as proof we are most likely in a simulation. This seems to me an incorrect conclusion to come to from the argument.
 
-In this article I discuss what simulation theory is, why it's important and what some of the possbile consequences of the theory are.  
+Therefore, in this article I discuss what simulation theory is, why it's important and what some of the possbile consequences of the theory are.  
 
 First let's look at what the theory is.
 
@@ -172,5 +172,3 @@ All we can deduce is that if (1) and (2) aren't true, then it's more likely we a
 Assuming we are not amazingly lucky, I certainly hope (1) isn't true as no-one likes the idea of extinction.  Neither does the idea that our simulation could be turned off seem any more palatable.
 
 Perhaps the best we can hope for is (2). Either that or we need to ensure the simulation is 'interesting' for our ancestors to keep watching!
-
-It may just be that our ancestors have done the posthuman equivalent of going out and leaving the television on.
