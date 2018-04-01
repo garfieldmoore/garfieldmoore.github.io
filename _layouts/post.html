@@ -37,8 +37,6 @@ layout: default
 
         <hr>
 
-
-
         {% if page.author %}
           {% include author.html %}
         {% endif %}
@@ -46,7 +44,12 @@ layout: default
         {% include share.html %}
 <!-- if site.comments.provider and  -->
 
-<h2>{{ site.data.comments[page.slug].size }} Comments</h2>
+<div <h5 class="separator ">
+  <span class="separator__title">{{ site.data.comments[page.slug].size }} Comments</span>
+
+</div>
+<!-- <h3>{{ site.data.comments[page.slug].size }} Comments</h3> -->
+
       {% if site.data.comments[page.slug].size > 0 %}
           {% assign comments = site.data.comments[page.slug] | sort %}
                 {% for comment in comments %}
@@ -65,8 +68,6 @@ layout: default
         <!-- {% include related.html %} -->
 
         <!-- {% include subscribe-form.html %} -->
-
-        <!-- {% include disqus.html %} -->
 
       </article>
     </div>

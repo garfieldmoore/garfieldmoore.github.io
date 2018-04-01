@@ -1,13 +1,17 @@
 <div>
-<h3>Leave a reply</h3>
+  <div class="medium-12">Leave a reply</div>
+  <div class="font-small">
+    <p>Your email is only used for the purpose of displaying an Avatar and is encrypted to protect your privacy</p>
+  </div>
 </div>
+
 <form method="POST" action="https://api.staticman.net/v2/entry/garfieldmoore/garfieldmoore.github.io/master/comments">
   <input name="options[redirect]" type="hidden" value="https://garfieldmoore.co.uk/commentsuccess">
   <!-- e.g. "2016-01-02-this-is-a-post" -->
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
   <div>
     <label>Comment</label>
-    <textarea name="fields[message]" placeholder="Please type your comments here"></textarea>
+    <textarea name="fields[message]" placeholder="Please type your feedback here"></textarea>
   </div>
   <div>
     <label>Name</label>
@@ -15,7 +19,7 @@
   </div>
   <div>
     <label for="email">E-mail</label>
-    <input id="email" name="fields[email]" type="email">
+    <input id="email" name="fields[email]" type="email" placeholder="">
   </div>
 
   <button type="submit">Add comment</button>
