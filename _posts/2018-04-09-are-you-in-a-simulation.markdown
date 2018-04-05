@@ -69,7 +69,9 @@ Another possibility is that posthumans might choose not to run simulations even 
 
 There may be any number of reasons for this;
 
-Firstly, on reaching the posthuman stage we may not want to run simulations simply because our motivations and interests have changed.  Though we see running simulations as desirable today, this desire may cease at the hugely more advanced posthuman stage. In short, we cannot assume our current and future motivations and interests will be the same.
+Firstly, on reaching the posthuman stage we may not want to run simulations simply because our motivations and interests have changed.  
+
+Though we see running simulations as desirable today, this desire may cease at the hugely more advanced posthuman stage. In short, we cannot assume our current and future motivations and interests will be the same.
 
 Another possibility is that we may impose strict sanctions on running simulations. Perhaps, as we become aware of moral or ethical issues.  To make this viable posthuman civilisations must converge on a path where no one individual has the wealth or freedom to run simulations despite these sanctions.
 
