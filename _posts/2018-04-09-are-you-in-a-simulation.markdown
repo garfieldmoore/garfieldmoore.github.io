@@ -15,7 +15,7 @@ image: '/images/posts/simulation_2.jpeg'
 ## Introduction
 Simulation theory has been getting a lot of attention lately.  However, it seems to have been misinterpreted by some as proof we are most likely in a simulation. This seems to me an incorrect conclusion to come to from the argument.
 
-So, I thought it would be interesting to take a look at what simulation theory is and what some of the possbile consequences of the theory are.  
+So, I thought it would be interesting to take a look at what simulation theory is and what some of the possible consequences of the theory are.  
 
 First let's look at what the theory is.
 
