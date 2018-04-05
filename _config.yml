@@ -1,7 +1,7 @@
 # Site settings
 title: Garfield Moore
 email: "me@garfieldmoore.co.uk"
-description: Notes on development so I don't forget and Some things I've learnt along the way
+description: Random thoughts on technology, & software development.
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://garfieldmoore.co.uk" # the base hostname & protocol for your site

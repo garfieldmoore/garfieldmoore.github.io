@@ -15,20 +15,20 @@ image: '/images/posts/simulation_2.jpeg'
 ## Introduction
 Simulation theory has been getting a lot of attention lately.  However, it seems to have been misinterpreted by some as proof we are most likely in a simulation. This seems to me an incorrect conclusion to come to from the argument.
 
-Therefore, I thought it would be interesting to take a look at what simulation theory is, why it's important and what some of the possbile consequences of the theory are.  
+So, I thought it would be interesting to take a look at what simulation theory is and what some of the possbile consequences of the theory are.  
 
 First let's look at what the theory is.
 
 ## Overview
-Simulation theory is the hypothesis that we may be living in a simulation. This is based on the idea that if technology continues to improve at any pace at all, we will eventually have the ability to create virtual realities that are indistinguishable from reality.
+Simulation theory is the hypothesis that we may be living in a simulation. The idea is that if technology continues to improve at any pace at all, we will eventually have the ability to create virtual realities indistinguishable from reality.
 
-If you think this is far fetched consider the history of computer games:  Just over Forty years ago we were playing [pong](https://en.wikipedia.org/wiki/Pong). Today our games are photo-realistic, and we already have more immersive virtual reality technology in the pipeline.
+If you think this is far fetched consider the history of computer games:  Just over Forty years ago we were playing [pong](https://en.wikipedia.org/wiki/Pong). Today our games are photo-realistic, and we have more immersive virtual reality technology in the pipeline.
 
-Just imagine what games will be like in ten or twenty years time, let along another forty years. Even if progress levelled or slowed dramatically, it seems we would achieve simulations if there was any rate of progress at all.
+Just imagine what games will be like in ten or twenty years time, let along another forty years. It seems certain we would achieve simulations if there was any rate of progress at all.
 
-Furthermore, that's just based on the technologies available to us now - we don't know what break-through technology is just around the corner.  
+Furthermore, that's based on the technologies available to us now - we don't know what break-through technology is just around the corner.  
 
-So, it seems not just possible but inevitable technology will reach the point of being able to create simulations indistinguishable from reality.
+So, it seems not only possible but inevitable technology will reach the point of being able to create simulations indistinguishable from reality.
 
 The consequence of this line of reasoning is that our ancestors may have reached this point already and we are living in one of their simulations.
 
@@ -58,7 +58,7 @@ First let's look at the simpler scenario's (1) and (2).
 ### (1) We are going to be extinct
 This is straightforward - One possible scenario is that we will become extinct before reaching a level of technology where we are able to run simulations.
 
-Perhaps, we will kill ourselves with bio-chemical weapons or find some other interesting way to die. Perhaps some natural disaster will befall us.
+We may will kill ourselves with bio-chemical weapons or find some other interesting way to die. Perhaps some natural disaster will befall us.
 
 So, we will either become extinct or we will reach the posthuman stage and have the technology to run simulations.
 
@@ -143,7 +143,7 @@ It's been debated that the simulation theory is not a sceptical argument - the a
 
 Therefore, our beliefs about reality hold true even if we are in a simulation of that reality.
 
-However, it doesn't seem impossible to recast the simulation theory in a way that makes it a sceptical argument. Why would posthumans only simulate their past - why not simply make up worlds that are not based on reality?
+However, it doesn't seem impossible to recast the simulation theory in a way that makes it a sceptical argument. Why would posthumans only simulate their past - why not make up worlds that are not based on reality?
 
 Wouldn't this make it a skeptical argument?  Perhaps, but in the original forms Descartes argument is a sceptical argument whilst the simulation hypothesis is not.
 
