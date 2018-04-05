@@ -15,7 +15,7 @@ image: '/images/posts/simulation_2.jpeg'
 ## Introduction
 Simulation theory has been getting a lot of attention lately.  However, it seems to have been misinterpreted by some as proof we are most likely in a simulation. This seems to me an incorrect conclusion to come to from the argument.
 
-Therefore, in this article I discuss what simulation theory is, why it's important and what some of the possbile consequences of the theory are.  
+Therefore, I thought it would be interesting to take a look at what simulation theory is, why it's important and what some of the possbile consequences of the theory are.  
 
 First let's look at what the theory is.
 
@@ -64,8 +64,6 @@ So, we will either become extinct or we will reach the posthuman stage and have 
 
 Given our previous discussion on technological progress this seems reasonable.  We will either reach the posthuman stage (with all the technological magic this implies) or become extinct before we reach this point.
 
-This doesn't seem a very optimistic option, so I for one hope this isn't true.
-
 ### (2) Posthumans won't run experiments
 Another possibility is that posthumans might choose not to run simulations even though they can.
 
@@ -78,11 +76,11 @@ Another possibility is that we may impose strict sanctions on running simulation
 These are not the only possibilities. There are many other possibilities why we would choose to not run experiments.
 
 ### (3) We are living in a simulation
-Now, let's examine the final amd most interesting scenario for our discussion.
+Now, let's examine the final and most interesting scenario for our discussion.
 
 Let's look at the original scenario again;
 
- 'We are almost certainly living in a computer simulation. It follows that the belief that there is a significant chance that
+'We are almost certainly living in a computer simulation. It follows that the belief that there is a significant chance that
 we will one day become posthumans who run ancestor‐simulations is false, unless we are currently living in a simulation'
 
 This is a bit wordy so let's split this up into two;
@@ -141,7 +139,7 @@ This is known as a [sceptical hypothesis](https://en.wikipedia.org/wiki/Philosop
 
 This seems similiar to the simulation theory.  However, there is an important difference;
 
-It's been debated that the simulation theory is not a sceptical argument - the argument is that we may be a simulation of our past.
+It's been debated that the simulation theory is not a sceptical argument - the argument is that we may be in a simulation of our past.
 
 Therefore, our beliefs about reality hold true even if we are in a simulation of that reality.
 
@@ -161,7 +159,7 @@ Some writers have commented that it is equally possible our physical bodies are 
 ## Conclusion
 So, which of these three scenario's is true or more likely?
 
-Well, it's wasn't Nick Bostrum's purpose to show which one is true - only to show that one of these must be true.
+Well, it wasn't Nick Bostrum's purpose to show which one is true - only to show that one of these must be true.
 
 One of them is true, we just don't know which one.  Therefore, it seems to me the most intelligent course is to ascribe equal weight to them until we have more information.
 
