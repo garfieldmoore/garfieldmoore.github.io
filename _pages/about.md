@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm a software designer, trainer and consultant working in London.  
+I'm software designer, trainer and consultant working in London.  
 
 I started programming back in the early 1980's when I was 12.  Myself and a friend taught ourselves [6502 assembler](https://en.wikipedia.org/wiki/MOS_Technology_6502). We went on to learn [Z80](https://en.wikipedia.org/wiki/Zilog_Z80) and [68000 assembler](https://en.wikipedia.org/wiki/Motorola_68000).
 

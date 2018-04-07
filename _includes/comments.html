@@ -10,16 +10,16 @@
   <!-- e.g. "2016-01-02-this-is-a-post" -->
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
   <div>
-    <label>Comment</label>
-    <textarea name="fields[message]" placeholder="Please type your feedback here"></textarea>
+    <label for="message">Comment (*)</label>
+    <textarea id="message" name="fields[message]" placeholder="Please type your feedback here" required></textarea>
   </div>
   <div>
-    <label>Name</label>
-    <input name="fields[name]" type="text">
+    <label for="name">Name</label>
+    <input id="name" name="fields[name]" type="text">
   </div>
   <div>
-    <label for="email">E-mail</label>
-    <input id="email" name="fields[email]" type="email" placeholder="">
+    <label for="email">E-mail (*)</label>
+    <input id="email" name="fields[email]" type="email" placeholder="enter your email" required>
   </div>
 
   <button type="submit">Add comment</button>

@@ -1,16 +1,15 @@
-One of the problems I constantly see in the teams I help is long cycle times and disagreement about what was in or out of scope for a piece of work.  In other words, the work takes too long and there is no clear direction or there is ambiguity in the work.
 
-Some of outward symptons of this problem I have seen are;
+One of the problems I constantly see in the teams I help is long cycle times and disagreement about what was in or out of scope for a piece of work.
+
+Some issues I often see are;
 
 * Stories taking a long time to finish
 * Unexpected delays or extra work required to finish these stories
 * Costly replanning of stories that cause further delays
 * Confusion between team members and upstream workers
 * Lengthy meetings and hand-offs between roles (for example, developers and test)
-* Last minute disagreements on what the scope of a story is or should be
-* Surprise dependencies on other teams
 
-There are a number of causes of this dysfuntion and it would be impossible to coherently address them all in one article.  HowevI am sure there are an infinite number of ways a team can come to this situation.  However, I think there are one or two practises that most commonly cause most of the issues above - or at least, there are one or two pracises that mitigate a large set of the above problemse.  
+I am sure there are an infinite number of ways a team can come to this situation.  However, I think there are one or two practises that most commonly cause most of the issues above - or at least, there are one or two pracises that mitigate a large set of the above problemse.  
 
 Therefore, I am going to constrain myself to tackling what I think is one of the most common issues I see; the scope of the story.
 
