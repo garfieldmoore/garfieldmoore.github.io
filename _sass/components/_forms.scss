@@ -28,5 +28,5 @@ textarea {
 
   @media #{$large-up} { padding: quarter($line-height__base) half($line-height__base); }
 
-  &:focus { border: 1px solid $color__base--hover; }
+  &:focus { border: 3px solid $color__base--hover; }
 }
