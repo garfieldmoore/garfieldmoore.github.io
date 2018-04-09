@@ -5,6 +5,11 @@ date: 2015-05-20 08:51:53
 categories:	".Net"
 image: '/images/posts/tag_cloud.jpeg'
 
+published: true
+type: post
+featured: false
+author: garfieldmoore
+
 ---
 
 I thought it would be a bit of fun to pass my code through a tag cloud creator. I thought it might give some insights into the domain language.
@@ -13,7 +18,9 @@ I used [Boomerang](https://github.com/garfieldmoore/Boomerang/) for this experi
 
 I merged the projects class files into one on the command line;
 
+``` script
 	for /r ".\boomerang.host" %f in (*.cs) do type %f >> merged_code.txt
+```
 
 Then when over to [tagCrowd.com](http://www.tagcrowd.com/) and created the image below.
 
