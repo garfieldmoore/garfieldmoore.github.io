@@ -44,9 +44,14 @@ layout: default
         {% include share.html %}
 <!-- if site.comments.provider and  -->
 
-<div <h5 class="separator ">
-  <span class="separator__title">{{ site.data.comments[page.slug].size }} Comments</span>
+<div class="screen-reader-only">
+  <h2>Comments</h2>
+</div>
 
+<div
+  <h5 class="separator separator__title">
+    <span class="separator__title">{{ site.data.comments[page.slug].size }} Comments</span>
+  </h5>
 </div>
 <!-- <h3>{{ site.data.comments[page.slug].size }} Comments</h3> -->
 
