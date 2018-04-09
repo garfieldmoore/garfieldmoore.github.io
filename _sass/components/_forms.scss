@@ -30,7 +30,7 @@ textarea {
   outline: none;
   background: transparent;
   appearance: none;
-  border-radius: 0;
+  border-radius: 2px;
   transition: $base-transition-speed;
 
   @media #{$large-up} { padding: quarter($line-height__base) half($line-height__base); }
