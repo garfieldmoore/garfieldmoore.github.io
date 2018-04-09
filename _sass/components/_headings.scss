@@ -6,15 +6,6 @@
 //   <span class="separator__title">Newsletter</span>
 // </h5>
 
-.screen-reader-only {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-}
-
 .separator {
   position: relative;
   margin: $line-height__base auto;
