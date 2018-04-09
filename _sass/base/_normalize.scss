@@ -99,10 +99,10 @@ a {
 //   font-weight: bold;
 // }
 
+a:focus,
 a:active,
 a:hover {
   outline: 0;
-  font-weight: bold;
 }
 
 /* Text-level semantics
