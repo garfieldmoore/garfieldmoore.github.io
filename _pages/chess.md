@@ -1,35 +1,8 @@
 ---
-layout: page
-title: Chess
+layout: noContentPage
+title: My Chess Games
 permalink: /MyChessGames/
 ---
-Here is one of my online games playing an opponent rated 1750
+Here is one of my online games playing an opponent rated 1751
 
-<!-- Support libraries from Yahoo YUI project -->  
-<script type="text/javascript"  
-    src="http://chesstempo.com/js/pgnyui.js">  
-</script>   
-
-<script type="text/javascript"  
-    src="http://chesstempo.com/js/pgnviewer.js">  
-</script>  
-
-<link  
- type="text/css"   
- rel="stylesheet"   
- href="http://chesstempo.com/css/board-min.css">  
-
-<script>
-new PgnViewer(
-  { boardName: "demo",
-    pieceSet: 'merida',
-    pieceSize: 46,
-    pgnString: "[white \"me\"] [black \"you\"]1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 c6 5.Bc4 Nf6 6.Bd2 Bf5 7.Nf3 e6 8.O-O Bb4 9.a3 Bxc3 10.Bxc3 Qc7 11.Re1 O-O 12.Qe2 Nbd7 13.Rad1 b5 14.Ba2 Nd5 15.Bd2 Bxc2 16.Rc1 Bg6 17.Bxd5 exd5 18.Qxb5 Rac8 19.Qb3 Nb6 20.Bb4 Rfd8 21.Ne5 Bf5 22.Rxc6 Qb7 23.Rec1 Rxc6 24.Nxc6 Re8 25.h3 Nc4 26.Ne5 Nxe5 27.dxe5 Rxe5 28.Qg3 Re8 29.Rc7 Qb8 30.Bc3 Bg6 31.h4 h5 32.Be5 Qb6 33.Qc3 a5 34.Bxg7 Re1+ 35.Qxe1 Qxc7 36.Qc3 Qxc3 37.Bxc3 a4 38.f3 Kf8 39.Bf6 Ke8 40.Kf2 Kd7 41.Ke3 Kc6 42.Kd4 Bf5 43.Be7 Bc2 44.Ke5 Bd3 45.Kf6 Bf1 46.g4 hxg4 47.fxg4 Be2 48.h5 Bxg4 49.h6",
-  }
-);
-</script>
-
-<body>
-  <div id="demo-container"></div>  
-  <div id="demo-moves"></div>  
-</body>
+{% include chess.html %}
