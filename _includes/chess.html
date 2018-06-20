@@ -1,18 +1,4 @@
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Example of PgnViewerJS in Board mode</title>
-    <meta name="description" content="Shows one example pgn game how to use the viewer to display a board only.">
-    <meta name="author" content="Markus Liebelt">
-
-    <!-- Libraries Js from PgnViewerJS -->
-    <script src="/assets/PgnViewerJS-0.9.7/js/pgnvjs.js" type="text/javascript"></script>
-
-    <!-- CSS used -->
-    <link rel="stylesheet" href="/assets/PgnViewerJS-0.9.7/css/pgnvjs.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-</head>
 <body>
 <div id="board" class="reset-text" style="width: 400px"></div>
 <script>
@@ -21,10 +7,13 @@
 [Date "2018.06.18"]\
 [White "G. Moore"]\
 [Black "Magus008"]\
+[WhiteElo "1697"]\
+[BlackElo "1769"]\
+[Termination "Capanik won by resignation"]\
 [Result "1-0"]\
-1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 c6 5.Bc4 Nf6 6.Bd2 Bf5 7.Nf3 e6 8.O-O Bb4 9.a3 Bxc3 10.Bxc3 Qc7 11.Re1 O-O 12.Qe2 Nbd7 13.Rad1 b5 14.Ba2 Nd5 15.Bd2 Bxc2 16.Rc1 Bg6 17.Bxd5 exd5 18.Qxb5 Rac8 19.Qb3 Nb6 20.Bb4 Rfd8 21.Ne5 Bf5 22.Rxc6 Qb7 23.Rec1 Rxc6 24.Nxc6 Re8 25.h3 Nc4 26.Ne5 Nxe5 27.dxe5 Rxe5 28.Qg3 Re8 29.Rc7 Qb8 30.Bc3 Bg6 31.h4 h5 32.Be5 Qb6 33.Qc3 a5 34.Bxg7 Re1+ 35.Qxe1 Qxc7 36.Qc3 Qxc3 37.Bxc3 a4 38.f3 Kf8 39.Bf6 Ke8 40.Kf2 Kd7 41.Ke3 Kc6 42.Kd4 Bf5 43.Be7 Bc2 44.Ke5 Bd3 45.Kf6 Bf1 46.g4 hxg4 47.fxg4 Be2 48.h5 Bxg4 49.h6 1-0';
+1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 c6 5.Bc4 Nf6 6.Bd2 Bf5 7.Nf3 e6 8.O-O Bb4 9.a3 Bxc3 10.Bxc3 Qc7 11.Re1 O-O 12.Qe2 Nbd7 13.Rad1 b5 14.Ba2 Nd5 15.Bd2 Bxc2 16.Rc1 Bg6 17.Bxd5 exd5 18.Qxb5 Rac8 19.Qb3 Nb6 20.Bb4 Rfd8 21.Ne5 Bf5 22.Rxc6 Qb7 23.Rec1 Rxc6 24.Nxc6 Re8 25.h3 Nc4 26.Ne5 Nxe5 27.dxe5 Rxe5 28.Qg3 Re8 29.Rc7 Qb8 30.Bc3 Bg6 31.h4 h5 32.Be5 Qb6 33.Qc3 a5 34.Bxg7 Re1+ 35.Qxe1 Qxc7 36.Qc3 Qxc3 37.Bxc3 a4 38.f3 Kf8 39.Bf6 Ke8 40.Kf2 Kd7 41.Ke3 Kc6 42.Kd4 Bf5 43.Be7 Bc2 44.Ke5 Bd3 45.Kf6 Bf1 46.g4 hxg4 47.fxg4 Be2 48.h5 Bxg4 49.h6 {black resigns as the h pawn will reach h8 and promote}';
     var cfg = { pgn:pgn,
-        locale: 'en', pieceStyle: 'leipzig', theme: 'chesscom', orientation: 'white', movesWidth:'700'};
+        locale: 'en', pieceStyle: 'wikipedia', theme: 'chesscom', orientation: 'white', movesWidth:'400'};
 
     var board = pgnView('board', cfg);
 </script>
