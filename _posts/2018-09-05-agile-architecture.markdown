@@ -10,7 +10,6 @@ author: garfieldmoore
 
 image: '/images/posts/Agile-Architecture-1920x999.jpg'
 ---
-
 I've often thought that agile teams miss oportunities or increase technical debt with a lack of architectural maturity.
 
 This was reinforced last year when I was running a series of eXtreme Programming workshops for teams in a large consultancy.  During one of these I was asked a seemingly innocuous question;
@@ -19,7 +18,7 @@ This was reinforced last year when I was running a series of eXtreme Programming
 
 This question spawned a mini-workshop where we walked through an example project and talked about when and why we would do architecture.  This seemed to help the team and was the catalyst for me considering about how agile fits into architecture.
 
-I started thinking about why the team would have this uncertainty of when to do architecture.  It occurred to me that the teams I've worked with have a lot of variance in their architectural maturity.
+Afterwards, I started thinking about why the team would have this uncertainty of when to do architecture.  It occurred to me that the teams I've worked with have a lot of variance in their architectural maturity.
 
 Why should this be?
 
