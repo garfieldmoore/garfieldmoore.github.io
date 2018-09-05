@@ -60,7 +60,6 @@ There are a number of places in the software development life-cycle for architec
 Some teams I've worked with have tried to manage architectural concerns in the backlog.  Often creating stories when they spot issues in the architecture created by the current story.
 
 I think there are a number of issues with this approach;
-
 * The product owner becomes dependant on technical input to prioritise the backlog.
 * It defers technical work and loses the benefits for the current story.
 
