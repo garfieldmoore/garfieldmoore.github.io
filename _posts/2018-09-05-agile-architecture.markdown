@@ -41,7 +41,6 @@ XP is a feature based development method; the focus is on feature delivery.  Of 
 However, XP is opinionated about the risks it manages.  It focuses risk around the most important risks to many projects; requirements risk and sustainability risk.
 
 This is highlighted by some of the pracises;
-
   * Stories and iterations manage requirements and delivery risks
   * Spikes manage knowledge and team capability risk
   * TDD manages detailed design manage risks around design and internal sustainability
@@ -74,10 +73,10 @@ Again, this often results in lost opportunities or increased technical debt.
 #### Release management
 To get early sight of architectural impact I've advocated having the teams senior engineers involved in the release management meetings.
 
-This has made the most sense in a number of teams I've worked and there are other benefits in having the technical stakeholders involved earlier.
+This has made the most sense in a number of teams I've worked with and there are other benefits in having technical stakeholders involved at this stage.
 
 ## Conclusion
-Where a team does architecture depends on the team, and the project context.  I've worked with teams that do architecture 'all the time'.
+Where a team does architecture depends on the team, and the project context.  I've worked with teams that successfully do architecture 'all the time'.
 
 However, all too often delivery imperatives or other forces mean that teams miss opportunities resulting in wasted effort or increased technical debt.
 
