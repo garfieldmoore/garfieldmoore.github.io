@@ -52,7 +52,7 @@ Although you don't need to create models or perform other archtictural activitie
 
 Not doing so will result in lost opportunities that make future features harder to implement or increase technical debt.  Left unmanaged this will introduce delivery risk into your projects.
 
-There are a number of places in the software development life-cycle for architecture.  Some of these are discussed below.
+There are a number of places in the software development life-cycle for architecture.  Some possibilities are managing architectural stories as backlog items, build it into the feature stories, or in release management.
 
 #### Manage architectural concerns in the backlog
 Some teams I've worked with have tried to manage architectural concerns in the backlog.  Often creating stories when they spot issues in the architecture created by the current story.
@@ -60,9 +60,10 @@ Some teams I've worked with have tried to manage architectural concerns in the b
 I think there are a number of issues with this approach;
 * The product owner becomes dependant on technical input to prioritise the backlog.
 * It defers technical work and loses the benefits for the current story.
+* This will skew your estimates for features.
 
 #### Intertwine it with stories
-A lot of teams can be successful doing architecture 'all the time' as part of thier story development life-cycle.  
+A lot of teams can be successful doing architecture 'all the time' as part of thier story development life-cycle.  There's a lot to be said for this approach because it ensures the estimates for feature work includes all technical tasks, including architectural work.
 
 However, often by the time the team sees a story, delivery expectations have already been set with other parts of the business.
 
@@ -71,9 +72,13 @@ This can make it harder for teams to go back and reset these expectations when t
 Again, this often results in lost opportunities or increased technical debt.
 
 #### Release management
-To get early sight of architectural impact I've advocated having the teams senior engineers involved in the release management meetings.
+I've often advocated having the teams senior engineers involved in the release management meetings.  Doing this ensures the engineers understand future work early, and can assess the impact on the architecure.  This enables them not only to spot architectural gaps early but also to take advantage of opportunities to make future work easier.
 
-This has made the most sense in a number of teams I've worked with and there are other benefits in having technical stakeholders involved at this stage.
+Additionally, the engineers can set expectations early by providing these insights during release planning and more accurate estimates when planning stories with the team.
+
+All too often the full impact of a story on the architecture is not considered during story planning.
+
+This option has made the most sense in a number of teams I've worked with.
 
 ## Conclusion
 Where a team does architecture depends on the team, and the project context.  I've worked with teams that successfully do architecture 'all the time'.
