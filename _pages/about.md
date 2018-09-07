@@ -3,8 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-I'm software designer, trainer and consultant working in London.  
+I'm a software designer, coach and consultant working in London.  I've built and coached engineering teams in enterprises, consultancies and startups.  I spend a lot of my time thinking about agile engineering & team practises and software architecture.
 
 I started programming back in the early 1980's when I was 12.  Myself and a friend taught ourselves [6502 assembler](https://en.wikipedia.org/wiki/MOS_Technology_6502). We went on to learn [Z80](https://en.wikipedia.org/wiki/Zilog_Z80) and [68000 assembler](https://en.wikipedia.org/wiki/Motorola_68000).
 
@@ -16,8 +15,6 @@ It was here I wrote my first commercial software to automate the calculations re
 
 I've gone on to help build teams and technology for large and small organisations as well as working in various stage start-ups.
 
-I now specialise in software architecture, devops and agile development practices.
+I now specialise in software architecture, devops and agile enginnering practices.
 
 ---
-#### What I'm working on
-Thinking about new projects...
