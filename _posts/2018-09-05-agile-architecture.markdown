@@ -87,4 +87,4 @@ However, all too often delivery imperatives or other forces mean that teams miss
 
 For the teams I've worked with it has made most sense to map the coming features onto the architecture during release planning activities.  
 
-This enables the team to spot gaps or opportunities early in the developmet cycle.  This becomes a natural part of the release planning activities and makes architecture more visible to stakeholders.
+This enables the team to spot gaps or opportunities early in the development cycle.  This becomes a natural part of the release planning activities and makes architecture more visible to stakeholders.
