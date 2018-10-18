@@ -3,7 +3,7 @@ layout: noContentPage
 title: My Chess Games
 permalink: /MyChessGames/
 ---
-After a hiatus while starting a family (2 girls, a boy, a spider, snake and 3 cats) I have started playing chess at the local level again.  I play in the kent and London leagues for my local chess club - Charlton Chess Club.  This is a small club with some big players and I have improved enormously since I joined in 2014.
+I've recently started playing chess at the local level again.  I play in the kent and London leagues for my local chess club - Charlton Chess Club.  This is a small club with some big players and I have improved enormously since I joined in 2014.
 
 So, I thought it would be fun to share some of my more recent games.
 
