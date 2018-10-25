@@ -17,6 +17,6 @@ It was here I wrote my first commercial software to automate the calculations re
 
 I've gone on to help build teams and technology for large and small organisations as well as working in various stage start-ups.
 
-I now specialise in software architecture, devops and agile enginnering practices.
+I now specialise in software architecture, devops and agile engineering practices.
 
 ---
