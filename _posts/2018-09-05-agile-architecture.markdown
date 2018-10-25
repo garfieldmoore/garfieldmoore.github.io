@@ -10,7 +10,7 @@ author: garfieldmoore
 
 image: '/images/posts/Agile-Architecture-1920x999.jpg'
 ---
-I've often thought that agile teams miss oportunities or increase technical debt with a lack of architectural maturity.
+I've often thought that agile teams miss opportunities or increase technical debt with a lack of architectural maturity.
 
 This was reinforced last year when I was running a series of eXtreme Programming workshops for teams in a large consultancy.  During one of these I was asked a seemingly innocuous question;
 
