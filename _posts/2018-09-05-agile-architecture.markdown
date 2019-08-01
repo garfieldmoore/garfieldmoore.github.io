@@ -27,28 +27,28 @@ The usual advise for agile teams is that you do 'Just enough' architecture and t
 
 This lack of guidance usually means that teams infer architecture should be intertwined with the normal story lifecycle.  This seems quite natural and I've worked with many teams where this works.  
 
-However, the problem is that this is dependant on the teams maturity or the delivery priorities.  Often if one or two senior engineers leave the architecture practises degrade because they are not explicit.
+However, the problem is that this is dependant on the teams maturity and abilities or the delivery priorities.  Often if one or two senior engineers leave, the architecture practises degrade because they are not explicit.
 
 There are other places in the software development lifecycle that are suitable. For example, I started advocating the release planning stage as a convenient place to make architectural concerns more visible.
 
 ## The agile architecure gap
 After thinking about this teams question and the reasons behind it I came to the conclusion that agile practises do not manage architectural risk as well as other types of risk.
 
-Architecure, and agile software developemt methods manage different kinds of risk; agile manages delivery risk and architecure and XP manage technical risks at different levels of granularity.
+Architecure, and agile software development methods manage different kinds of risk; agile manages delivery risk.  Whereas, architecture and XP manages technical risks at different levels of granularity.
 
 XP is a feature based development method; the focus is on feature delivery.  Of course XP and agile both manages risk.  If they didn't all but the simplest agile projects would fail.
 
 However, XP is opinionated about the risks it manages.  It focuses risk around the most important risks to many projects; requirements risk and sustainability risk.
 
-This is highlighted by some of the pracises;
+This is highlighted by some of the practises;
   * Stories and iterations manage requirements and delivery risks
   * Spikes manage knowledge and team capability risk
-  * TDD manages detailed design manage risks around design and internal sustainability
+  * TDD manages detailed design risks around design and internal sustainability
 
 None of these explicitly manage architectural risk.
 
 ## Opportunities for Architecture
-Although you don't need to create models or perform other archtictural activities 'all the time', you do need to be aware of the impact new features may have on your architecure.  
+Although you don't need to create models or perform other architectural activities 'all the time', you do need to be aware of the impact new features may have on your architecure.
 
 Not doing so will result in lost opportunities that make future features harder to implement or increase technical debt.  Left unmanaged this will introduce delivery risk into your projects.
 
@@ -63,7 +63,7 @@ I think there are a number of issues with this approach;
 * This will skew your estimates for features.
 
 #### Intertwine it with stories
-A lot of teams can be successful doing architecture 'all the time' as part of thier story development life-cycle.  There's a lot to be said for this approach because it ensures the estimates for feature work includes all technical tasks, including architectural work.
+A lot of teams can be successful doing architecture 'all the time' as part of their story development life-cycle.  There's a lot to be said for this approach because it ensures the estimates for feature work includes all technical tasks, including architectural work.
 
 However, often by the time the team sees a story, delivery expectations have already been set with other parts of the business.
 
@@ -72,7 +72,7 @@ This can make it harder for teams to go back and reset these expectations when t
 Again, this often results in lost opportunities or increased technical debt.
 
 #### Release management
-I've often advocated having the teams senior engineers involved in the release management meetings.  Doing this ensures the engineers understand future work early, and can assess the impact on the architecure.  This enables them not only to spot architectural gaps early but also to take advantage of opportunities to make future work easier.
+I've often advocated having the teams senior engineers involved in the release management meetings.  Doing this ensures the engineers understand future work early, and can assess the impact on the architecture.  This enables them not only to spot architectural gaps early but also to take advantage of opportunities to make future work easier.
 
 Additionally, the engineers can set expectations early by providing these insights during release planning and more accurate estimates when planning stories with the team.
 
