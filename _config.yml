@@ -4,7 +4,7 @@ email: "me@garfieldmoore.co.uk"
 description: Random thoughts on technology, & software development.
 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://garfieldmoore.co.uk" # the base hostname & protocol for your site
+url: "http://www.garfieldmoore.co.uk" # the base hostname & protocol for your site
 twitter_username: garfieldmoore
 github_username:  garfieldmoore
 linkedin_username: garfieldmoore
