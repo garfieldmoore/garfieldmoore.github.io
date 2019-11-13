@@ -9,7 +9,7 @@ type: post
 featured: false
 author: garfieldmoore
 
-image: '/images/posts/lose_customer.jpeg'
+image: 'http://dd03isve2g8o3.cloudfront.net/lose_customer.jpeg'
 ---
 I've been on a number of projects that used 'Technical' user stories.  One incarnation of the 'technical story' I saw on a recent project was the technical debt story.  It went something like this;
 

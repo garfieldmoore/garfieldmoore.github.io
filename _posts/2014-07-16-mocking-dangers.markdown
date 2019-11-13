@@ -3,7 +3,7 @@ layout: post
 title: Mocking dangers
 date: 2014-07-16 19:26:26.000000000 +01:00
 categories: TDD
-image: '/images/posts/mock_danger.jpeg'
+image: 'http://dd03isve2g8o3.cloudfront.net/mock_danger.jpeg'
 
 published: true
 type: post

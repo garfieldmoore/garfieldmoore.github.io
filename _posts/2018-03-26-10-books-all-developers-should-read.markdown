@@ -10,7 +10,7 @@ type: post
 featured: false
 author: garfieldmoore
 
-image: '/images/posts/books.jpeg'
+image: 'http://dd03isve2g8o3.cloudfront.net/books.jpeg'
 
 ---
 

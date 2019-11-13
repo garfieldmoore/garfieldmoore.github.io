@@ -3,7 +3,7 @@ layout: post
 title: Code tag cloud
 date: 2015-05-20 08:51:53
 categories:	".Net"
-image: '/images/posts/tag_cloud.jpeg'
+image: 'http://dd03isve2g8o3.cloudfront.net/tag_cloud.jpeg'
 
 published: true
 type: post
