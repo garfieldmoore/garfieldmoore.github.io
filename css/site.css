@@ -34,3 +34,9 @@ a:focus {
     text-shadow : none;
     text-transform : none;
 }
+
+@media (max-width:629px) {
+  img .notShownOnMobileDevice {
+    display: none;
+  }
+}
