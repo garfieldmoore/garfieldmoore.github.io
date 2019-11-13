@@ -10,7 +10,7 @@ type: post
 featured: false
 author: garfieldmoore
 
-image: 'http://dd03isve2g8o3.cloudfront.net/simulation_2.jpeg'
+image: '/images/posts/simulation_2.jpeg'
 ---
 ## Introduction
 Simulation theory has been getting a lot of attention lately.  However, it seems to have been misinterpreted by some as proof we are most likely in a simulation. This seems to me an incorrect conclusion to come to from the argument.

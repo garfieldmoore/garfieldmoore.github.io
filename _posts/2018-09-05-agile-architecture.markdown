@@ -8,7 +8,7 @@ type: post
 featured: false
 author: garfieldmoore
 
-image: 'http://dd03isve2g8o3.cloudfront.net/Agile-Architecture-1920x999.jpg'
+image: '/images/posts/Agile-Architecture-1920x999.jpg'
 ---
 I've often thought that agile teams miss opportunities or increase technical debt with a lack of architectural maturity.
 
