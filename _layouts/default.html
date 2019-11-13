@@ -2,17 +2,17 @@
 <html lang="en">
 
   {% include head.html %}
-<script async type="text/javascript" src="//userlike-cdn-widgets.s3-eu-west-1.amazonaws.com/f68b0023f49f723e87f663c2f7731243add889190026163a5ba4b3c90ecfad7e.js"></script>
+<script defer type="text/javascript" src="//userlike-cdn-widgets.s3-eu-west-1.amazonaws.com/f68b0023f49f723e87f663c2f7731243add889190026163a5ba4b3c90ecfad7e.js"></script>
 
   <body>
     {% include analytics.html %}
 
     <div class="off-canvas-container">
-    {% include sidebar.html %}
+      {% include sidebar.html %}
 
-    {{ content }}
+      {{ content }}
 
-  </div>
+    </div>
 
   <script src="{{ '/js/jquery-2.1.4.min.js' | prepend: site.baseurl }}"></script>
   <script defer src="{{ '/js/evil-icons.min.js' | prepend: site.baseurl }}"></script>
