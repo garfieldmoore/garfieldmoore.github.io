@@ -40,9 +40,3 @@ a:focus {
     display: none;
   }
 }
-
-@media screen and (min-width:700px) {
-  .notShownOnMobileDevice {
-    background-color: blue;
-  }
-}
