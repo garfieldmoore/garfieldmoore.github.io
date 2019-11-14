@@ -3,9 +3,12 @@
 
     <div class="column small-10 large-12">
       <h1 class="sidebar__logo logo">
-        <!-- <div class="notShownOnMobileDevice">
+        <!-- Used sidebar__description as it has the behaviour I wanted to not show on mobile.
+            see sidebar.scss
+        -->
+        <div class="sidebar__description">
           <a href="{{site.baseurl }}/"><img src="/images/logo.png" alt="my logo"></a>
-        </div -->
+        </div
 
         <i class="fa fa-code" aria-hidden="true"></i>
         <a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
