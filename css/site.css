@@ -36,7 +36,7 @@ a:focus {
 }
 
 @media (max-width:629px) {
-  img .notShownOnMobileDevice {
+  .notShownOnMobileDevice {
     display: none;
   }
 }
